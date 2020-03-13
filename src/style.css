@@ -1,0 +1,8 @@
+#root{
+    width: 60%;
+}
+.demo{
+    width: 25%;
+    border: 10px;
+    display: inline-block;
+}
