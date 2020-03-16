@@ -1,33 +1,20 @@
 import { example } from './data.js';
 import data from './data/pokemon/pokemon.js';
 console.log(example, data);
-
-/*const recorrerArrayA = (pokemon, index) =>{
-    for (let i=pokemon.length - 1; i >= 0; i--) {
-        console.log(i);
-        //document.getElementById("demo1").innerHTML += '<div class="contenedor"><div>'+pokemon.num[i] + '</div><div>' + pokemon.name[i] + '</div><br><img src="'+pokemon.img[i]+'">'+'<p>'+pokemon.type[i]+'</p></div>';
-    }
+let  sortNumDesc = ( pokemon ) =>{
+    console.log(pokemon.forEach(pokemon.sort((a,b) => b.num - a.num)));
 };
-let recorrer2 = () =>{
-    for (let i=pokemon.length - 1; i >= 0; i--) {
-        console.log(i);
-        //document.getElementById("demo1").innerHTML += '<div class="contenedor"><div>'+pokemon.num[i] + '</div><div>' + pokemon.name[i] + '</div><br><img src="'+pokemon.img[i]+'">'+'<p>'+pokemon.type[i]+'</p></div>';
-    }
-    document.getElementById("demo").classList.add("ocultar");
-    document.getElementById("demo1").classList.remove("ocultar");
-}*/
-function sortNumDesc(pokemon) {
-    let arrPokemonesNumDesc = pokemon;
-    arrPokemonesNumDesc = arrPokemonesNumDesc.sort((a, b) => {
-      if (parseInt(a.num) < parseInt(b.num))
-        return 1
-      else
-        return -1
-    })
-    return arrPokemonesNumDesc
-  }
-  
-document.getElementById("may").addEventListener("click", recorrer2);//mayor a menor
+
+// const mayorMenor = (pokemon, index) =>{
+//     let nuevoArray = pokemon.sort(function (a, b){
+//         if(b.num - a.num))return (b.num - a.num);
+//     })
+//     document.getElementById("demo").classList.add("ocultar");
+//     document.getElementById("demo1").classList.remove("ocultar");
+//     document.getElementById("demo1").innerHTML += '<div class="contenedor"><div>'+pokemon.num + '</div><div>' + pokemon.name + '</div><br><img src="'+pokemon.img+'">'+'<p>'+pokemon.type+'</p></div>';
+// };
+document.getElementById("may").addEventListener("click", sortNumDesc);//mayor a menor
+
 
 const recorrerArray = (pokemon, index) =>{
     document.getElementById("demo").innerHTML += '<div class="contenedor"><div>'+pokemon.num + '</div><div>' + pokemon.name + '</div><br><img src="'+pokemon.img+'">'+'<p>'+pokemon.type+'</p></div>';
