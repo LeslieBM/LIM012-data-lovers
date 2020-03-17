@@ -1,68 +1,81 @@
 // import { example } from './data.js';
 import data from './data/pokemon/pokemon.js';
 const pokemon = data.pokemon;
-
-const recorrerArray = (pokemon) => {
-  document.getElementById('demo').innerHTML += `
-  <div class="contenedor">
-    <img src="${pokemon.img}">
-    <p>N°${pokemon.num}</p>
-    <p>${pokemon.name}</p>
-    <p>${pokemon.type}</p>
-  </div>`;
-  const sortNumAsc = (pkm) => {
-    console.log('3.0');
-    let arrPokemonesNumDesc = [];
-    arrPokemonesNumDesc = pkm.sort((a, b) => {
+const recorrerArray = (pkm) => {
+  const sortNumDesc = (poke) => {
+    let arrPokemonesNumAsc = [];
+    arrPokemonesNumAsc = poke.sort((a, b) => {
       return a.num - b.num;
     });
-    return arrPokemonesNumDesc;
+    return arrPokemonesNumAsc;
   };
-  console.log('1');
+  let nuevoA = [];
+  nuevoA = sortNumDesc(pkm);
+  for (let i = 0; i < data.pokemon.length; i++){
+    document.getElementById('PokeAsc').innerHTML += `
+    <div class="contenedor">
+      <img src="${nuevoA[i].img}">
+      <p>N°${nuevoA[i].num}</p>
+      <p>${nuevoA[i].name}</p>
+      <p>${nuevoA[i].type}</p>
+    </div>`;
+  }
 };
-const reccorer = () => {
-  document.getElementById('demo1').classList.add('ocultar');
-  document.getElementById('demo').classList.remove('ocultar');
-  data.pokemon.forEach(recorrerArray);
-  console.log('2');
+const recorrer = () => {
+  document.getElementById('PokeDes').classList.add('ocultar');
+  document.getElementById('PokeAsc').classList.remove('ocultar');
+  document.getElementById('PokeAsc').value = "";
+  // data.pokemon.forEach(recorrerArray2);
+  recorrerArray(pokemon);
 };
-document.getElementById('men').addEventListener('click', reccorer);// menor a mayor
-// mayor a menor
-// const sortNumAsc = (pkm) => {
-//   console.log('3.0');
-//   let arrPokemonesNumDesc = [];
-//   arrPokemonesNumDesc = pkm.sort((a, b) => {
-//     return a.num - b.num;
-//   });
-//   return arrPokemonesNumDesc;
+// const recorrerArray = (pokemon) => {
+//   document.getElementById('demo').innerHTML += `
+//   <div class="contenedor">
+//     <img src="${pokemon.img}">
+//     <p>N°${pokemon.num}</p>
+//     <p>${pokemon.name}</p>
+//     <p>${pokemon.type}</p>
+//   </div>`;
+//   console.log('1');
 // };
-const sortNumDesc = (pkm) => {
-  console.log('3');
-  let arrPokemonesNumDesc = [];
-  arrPokemonesNumDesc = pkm.sort((a, b) => {
-    return b.num - a.num;
-  });
-  return arrPokemonesNumDesc;
-};
+// // data.pokemon.forEach(recorrerArray);
+// const reccorer = () => {
+//   document.getElementById('demo1').classList.add('ocultar');
+//   document.getElementById('demo').classList.remove('ocultar');
+//   data.pokemon.forEach(recorrerArray);
+// };
+document.getElementById('men').addEventListener('click', recorrer);// menor a mayor
+// mayor a menor
 const recorrerArray2 = (pkm) => {
-  document.getElementById('demo1').innerHTML += `
+  const sortNumDesc = (poke) => {
+    let arrPokemonesNumDesc = [];
+    arrPokemonesNumDesc = poke.sort((a, b) => {
+      return b.num - a.num;
+    });
+    return arrPokemonesNumDesc;
+    console.log(arrPokemonesNumDesc);
+  };
+  let nuevoA = [] ;
+  nuevoA = sortNumDesc(pkm);
+  for(let i=0; i<data.pokemon.length;i++){
+    document.getElementById('PokeDes').innerHTML += `
   <div class="contenedor">
-    <img src="${pkm.img}">
-    <p>N°${pkm.num}</p>
-    <p>${pkm.name}</p>
-    <p>${pkm.type}</p>
+    <img src="${nuevoA[i].img}">
+    <p>N°${nuevoA[i].num}</p>
+    <p>${nuevoA[i].name}</p>
+    <p>${nuevoA[i].type}</p>
   </div>`;
-  console.log('4');
+  }
 };
-const reccorer2 = () => {
-  document.getElementById('demo').classList.add('ocultar');
-  document.getElementById('demo1').classList.remove('ocultar');
-  pokemon.forEach(sortNumDesc(pokemon));
-  console.log('5');
+const recorrer2 = () => {
+  document.getElementById('PokeAsc').classList.add('ocultar');
+  document.getElementById('PokeDes').classList.remove('ocultar');
+  document.getElementById('PokeDes').value= "";
+  // data.pokemon.forEach(recorrerArray2);
+  recorrerArray2(pokemon);
 };
 // document.getElementById("demo").classList.add("ocultar");
 // document.getElementById("demo1").classList.remove("ocultar");
-// document.getElementById("demo1").innerHTML += '<div class="contenedor"><div>'+pokemon.num + '</div><div>' + pokemon.name + '</div><br><img src="'+pokemon.img+'">'+'<p>'+pokemon.type+'</p></div>';
-document.getElementById('may').addEventListener('click', sortNumDesc(pokemon)); // mayor a menor
+document.getElementById('may').addEventListener('click', recorrer2); // mayor a menor
 document.getElementById('az');
 document.getElementById('za');
