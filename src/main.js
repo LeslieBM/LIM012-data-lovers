@@ -1,55 +1,27 @@
-// import { example } from './data.js';
+import {
+  ordenarArrayAsc, ordenarArrayDes, ordenarArrayAz, ordenarArrayZa,
+} from './data.js';
 import data from './data/pokemon/pokemon.js';
-const arrPokemon = data.pokemon;
 
-// Definición de la función
+const arrPokemon = data.pokemon;
 const recorrerArray = (arr) => {
-  for (let i = 0; i < arr.length; i++){
+  for (let i = 0; i < arr.length; i += 1) {
     document.getElementById('MostarPokemones').innerHTML += `
-    <div class="contenedor">
-      <img src="${arr[i].img}">
-      <p>N°${arr[i].num}</p>
-      <p>${arr[i].name}</p>
-      <p>${arr[i].type}</p>
-    </div>`;
+      <div class="contenedor">
+        <img src="${arr[i].img}">
+        <p>N°${arr[i].num}</p>
+        <p>${arr[i].name}</p>
+        <p>${arr[i].type}</p>
+      </div>`;
   }
 };
-const ordenarArrayAsc = (arr) => {
-  let arrPokemonesNumAsc = [];
-  arrPokemonesNumAsc = arr.sort((a, b) => {
-    return a.num - b.num;
-  });
-  return arrPokemonesNumAsc;
-};
-const ordenarArrayDes = (arr) => {
-  let arrPokemonesNumDesc = [];
-  arrPokemonesNumDesc = arr.sort((a, b) => {
-    return b.num - a.num;
-  });
-  return arrPokemonesNumDesc;
-};
-const ordenarArrayAz = (arr) => {
-  let arrPokemonesAz = [];
-  arrPokemonesAz = arr.sort((a,b) =>{
-    if (a.name > b.name) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
-  return arrPokemonesAz;
-};
-const ordenarArrayZa = (arr) => {
-  let arrPokemonesZa = [];
-  arrPokemonesZa = arr.sort((a,b) =>{
-    if (b.name > a.name) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
-  return arrPokemonesZa;
-};
+// Definición de la función
+function cargar() {
+  recorrerArray(ordenarArrayAsc(arrPokemon));
+  // ordenarArrayAsc(arrPokemon).forEach(recorrerArray);
+}
+window.addEventListener('load', cargar, false);
+
 document.getElementById('men').addEventListener('click', () => {
   document.getElementById('MostarPokemones').innerHTML = '';
   recorrerArray(ordenarArrayAsc(arrPokemon));
