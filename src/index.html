@@ -6,7 +6,36 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
+    <header class="heder">
+      <div><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Pok%C3%A9mon_GO_logo.svg/1200px-Pok%C3%A9mon_GO_logo.svg.png" width="10%;" height="70px;"></div>
+      <div></div>
+    </header>
+    <div id="contenedorT">
+      <div id="izquierda">
+        <button class="menu">Pokedex</button>
+        <button class="menu">Ganar caramelos</button>
+        <button class="menu">Comparar pokemones</button>
+        <button class="menu">Datos de poder</button>
+      </div>
+      <div id="derecha">
+        <div id="pokedex">
+          <div id="mos1">
+            <p>POKEDEX</p>
+            <p>Aquí encontrarás todo lo que necesitas saber acerca de tus pokemones. Selecciona un pokemón para ver sus principales caracteristicas.</p>
+          </div>
+          <div>
+            <button id="men">menor a mayor</button>
+            <button id="may">mayor a menor</button>
+            <button id="az">a-z</button>
+            <button id="za">z-a</button>
+          </div>
+          <div id="MostarPokemones" class="demo"></div>
+        </div>
+        <div id="GanarCaramelos">
+
+        </div>   
+      </div>
+    </div>
     <script src="main.js" type="module"></script>
   </body>
 </html>
