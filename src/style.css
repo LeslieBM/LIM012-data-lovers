@@ -1,6 +1,3 @@
-.ocultar{
-    display: none;
- }
 body {
 	margin: 0;
 	padding: 0;
@@ -21,22 +18,39 @@ body {
     left: 0; /* Posicionamos la cabecera al lado izquierdo */
 	top: 0;/* Posicionamos la cabecera pegada arriba */
 }
+#btn-menu{
+    display:none;
+}
+label{
+    display:block;
+    width: 5em;
+    height: 2em;
+    padding: 0.5em;
+}
+label:hover{
+    cursor:pointer;
+    background: yellowgreen;
+}
+#izquierda ul{
+    
+}
 
 #contenedorT{
     display : flex;
     width: 100%;
     height: 100%;
-    /*flex-wrap: wrap;*/
+    flex-wrap: wrap;
     text-align: center;
 }
-#izquierda{
+
+#izquierda {
     width: 15%;
-    height: 1000px;
-    float:left;
+    height: 100%;
+    *float:left;
     background: #FFCB05;
     display: flex;
     position: fixed;/* Hacemos que la cabecera tenga una posición*/
-    /*justify-content: space-around;*/
+    justify-content: space-around;
     flex-direction: column;
 }
 .menu{
@@ -88,8 +102,7 @@ body {
 }
 .interior{
     text-align: left;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d2b0644835884785891f70c17df963f884f15c42
+
+
+
