@@ -1,10 +1,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	/*font-family: Helvetica, Arial, sans-serif;
-	color: #666;
-	background: #f2f2f2; 
-	font-size: 1em;*/
+	font-size: 1em;
 	line-height: 1.5em;
     padding-top: 5%; /* Relleno superior igual a la altura de la cabecera*/
     width: 100%;
@@ -18,6 +15,7 @@ body {
     left: 0; /* Posicionamos la cabecera al lado izquierdo */
 	top: 0;/* Posicionamos la cabecera pegada arriba */
 }
+<<<<<<< HEAD
 #btn-menu{
     display:none;
 }
@@ -35,10 +33,13 @@ label:hover{
     
 }
 
+=======
+>>>>>>> b253c5c61756de5b1c998e2f0a14bfd79deadc77
 #contenedorT{
     display : flex;
     width: 100%;
     height: 100%;
+<<<<<<< HEAD
     flex-wrap: wrap;
     text-align: center;
 }
@@ -47,6 +48,14 @@ label:hover{
     width: 15%;
     height: 100%;
     *float:left;
+=======
+    text-align: center;
+}
+#izquierda{
+    /* width: 15%; */
+    height: 1000px;
+    float:left;
+>>>>>>> b253c5c61756de5b1c998e2f0a14bfd79deadc77
     background: #FFCB05;
     display: flex;
     position: fixed;/* Hacemos que la cabecera tenga una posición*/
@@ -60,7 +69,7 @@ label:hover{
     padding: 10px;
 }
 #derecha{
-    width: 85%;
+    width: 100%;
     padding-left: 18%;
     float:left;
     background: #F6F8FF;
@@ -78,31 +87,72 @@ label:hover{
     margin: 1%;
     border: #A1A1AE 1px solid; 
 }
-#menu1 * { list-style:none;}
-#menu1 li{ line-height:180%;}
-/*#menu li a{color:#222; text-decoration:none;}
-#menu li a:before{ content:"\025b8"; color:#ddd; margin-right:4px;}
-#menu label:before{ content:"\025b8"; margin-right:4px;}
-#menu1 input:checked ~ label:before{ content:"\025be";}
-*/
-#menu1 input[name="list"] {
-	position: absolute;
-	left: -1000em;
-	}
-
-
-#menu1 .interior{display: none;}
-#menu1 input:checked ~ ul{display:block;}
-#menu1{
-    background: #FFCB05;
-    width: 10%;
-    text-align: center;
-    text-align: left;/*centrar una lista*/
-    display:inline-block;/*centrar una lista*/
-}
 .interior{
     text-align: left;
+<<<<<<< HEAD
 }
 
 
+=======
+}
+/* Barra lateral */
+#check{
+    display: none;
+}
+#icone{
+    cursor: pointer;
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+}
+.barra{
+    background: #FFCB05;
+    height: 100%;
+    width: 15%;
+    position: absolute;
+    transition: all .2s linear;
+    left: -300px;
+}
+nav{
+    width: 100%;
+    position: absolute;
+    top: 60px;
+}
+nav a{
+    text-decoration: none;
+}
+.link{
+    background-color: #FFCB05;
+    padding: 20px;
+    font-size: 12pt;
+    transition: all .2s linear;
+    color: #F6F8FF;
+    border-bottom: 2px solid #F6F8FF ;
+}
+.link:hover{
+    background-color: #205FA7;
+}
+#check:checked ~ .barra{
+    transform: translateX(300px);
+}
+@media screen and (max-width:1100px) and (min-width:300px) {
+    /* celular */
+    body {
+        padding-top: 10%; /* Relleno superior igual a la altura de la cabecera*/
+    }
+    .heder{
+        height: 10%;
+    }
+    .imagen img{
+        width: 50px;
+        height: 10px;
+    }
+    .contenedor{
+        width: 45%;
+        margin: 1%;
+        
+	font-size: 2em;
+    }
+}
+>>>>>>> b253c5c61756de5b1c998e2f0a14bfd79deadc77
 
