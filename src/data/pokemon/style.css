@@ -1,0 +1,91 @@
+.ocultar{
+    display: none;
+ }
+body {
+	margin: 0;
+	padding: 0;
+	/*font-family: Helvetica, Arial, sans-serif;
+	color: #666;
+	background: #f2f2f2; 
+	font-size: 1em;*/
+	line-height: 1.5em;
+    padding-top: 5%; /* Relleno superior igual a la altura de la cabecera*/
+    width: 100%;
+    height: 100%;
+}
+.heder{
+    width: 100%;
+    height: 10%;
+    background: #205FA7;
+    position: fixed;/* Hacemos que la cabecera tenga una posición*/
+    left: 0; /* Posicionamos la cabecera al lado izquierdo */
+	top: 0;/* Posicionamos la cabecera pegada arriba */
+}
+
+#contenedorT{
+    display : flex;
+    width: 100%;
+    height: 100%;
+    /*flex-wrap: wrap;*/
+    text-align: center;
+}
+#izquierda{
+    width: 15%;
+    height: 1000px;
+    float:left;
+    background: #FFCB05;
+    display: flex;
+    position: fixed;/* Hacemos que la cabecera tenga una posición*/
+    /*justify-content: space-around;*/
+    flex-direction: column;
+}
+.menu{
+    background: #FFCB05;
+    border: #F6F8FF 1px solid; 
+    font-size: 20px;
+    padding: 10px;
+}
+#derecha{
+    width: 85%;
+    padding-left: 18%;
+    float:left;
+    background: #F6F8FF;
+}
+.demo{
+    /*width: 25%;
+    border: 10px;*/
+    width: 90%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.contenedor{
+    width: 20%;
+    margin: 1%;
+    border: #A1A1AE 1px solid; 
+}
+#menu1 * { list-style:none;}
+#menu1 li{ line-height:180%;}
+/*#menu li a{color:#222; text-decoration:none;}
+#menu li a:before{ content:"\025b8"; color:#ddd; margin-right:4px;}
+#menu label:before{ content:"\025b8"; margin-right:4px;}
+#menu1 input:checked ~ label:before{ content:"\025be";}
+*/
+#menu1 input[name="list"] {
+	position: absolute;
+	left: -1000em;
+	}
+
+
+#menu1 .interior{display: none;}
+#menu1 input:checked ~ ul{display:block;}
+#menu1{
+    background: #FFCB05;
+    width: 10%;
+    text-align: center;
+    text-align: left;/*centrar una lista*/
+    display:inline-block;/*centrar una lista*/
+}
+.interior{
+    text-align: left;
+}
