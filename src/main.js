@@ -1,5 +1,6 @@
 import {
   ordenarArrayAsc, ordenarArrayDes, ordenarArrayAz, ordenarArrayZa,
+// eslint-disable-next-line import/no-unresolved
 } from './data.js';
 
 import data from './data/pokemon/pokemon.js';

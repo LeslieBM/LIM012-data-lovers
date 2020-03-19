@@ -1,6 +1,6 @@
 import {
   ordenarArrayAsc, ordenarArrayDes, ordenarArrayAz, ordenarArrayZa,
-} from '../src/data.js';
+} from './src/data.js';
 
 describe('ordenarArrayAsc', () => {
   it('is a function', () => {
