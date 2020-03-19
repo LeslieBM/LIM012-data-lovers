@@ -121,30 +121,4 @@ nav a{
 	font-size: 2em;
     }
 }
-/* @media screen and (min-width:1024px) { 
-    body {
-        padding-top: 10%; Relleno superior igual a la altura de la cabecera
-    }
-    .barra{
-        background: green;
-    }
-    .imagen img{
-        width: 10%;
-        height: 100%;
-    }
-}*/
-/* @media screen and (max-width:640px) {
-    body {
-        padding-top: 5%; Relleno superior igual a la altura de la cabecera
-    }
-    .imagen img{
-        width: 10%;
-        height: 100%;
-    }
-    .heder{
-        height: 10%;
-    }
-    .barra{
-        background: purple;
-    }
-}*/
+
