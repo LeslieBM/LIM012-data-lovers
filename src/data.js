@@ -1,10 +1,3 @@
-// estas funciones son de ejemplo
-// export const sortNumAsc = (pokemon) => {
-
-// };
-// export const sortNumDesc = (pokemon) => {
-
-// };
 export const ordenarArrayAsc = (arr) => {
 <<<<<<< HEAD
     let arrPokemonesNumAsc = [];
