@@ -84,6 +84,7 @@ nav{
 }
 nav a{
     text-decoration: none;
+<<<<<<< HEAD
 }
 .link{
     background-color: #FFCB05;
@@ -99,6 +100,23 @@ nav a{
 #check:checked ~ .barra{
     transform: translateX(300px);
 }
+=======
+}
+.link{
+    background-color: #FFCB05;
+    padding: 20px;
+    font-size: 12pt;
+    transition: all .2s linear;
+    color: #F6F8FF;
+    border-bottom: 2px solid #F6F8FF ;
+}
+.link:hover{
+    background-color: #205FA7;
+}
+#check:checked ~ .barra{
+    transform: translateX(300px);
+}
+>>>>>>> origin
 @media screen and (max-width:1100px) and (min-width:300px) {
     /* celular */
     body {
@@ -117,4 +135,9 @@ nav a{
         
 	font-size: 2em;
     }
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> origin
