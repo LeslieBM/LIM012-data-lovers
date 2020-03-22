@@ -1,6 +1,10 @@
 import {
   ordenarArrayAsc, ordenarArrayDes, ordenarArrayAz, ordenarArrayZa,
+<<<<<<< HEAD
+} from './src/data.js';
+=======
 } from '../src/data.js';
+>>>>>>> origin
 
 describe('ordenado Ascendente', () => {
   it('is a function', () => {

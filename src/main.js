@@ -1,6 +1,7 @@
 import {
   ordenarArrayAsc, ordenarArrayDes, ordenarArrayAz, ordenarArrayZa, filtrarKM,
 } from './data.js';
+
 import data from './data/pokemon/pokemon.js';
 
 const arrPokemon = data.pokemon;
@@ -17,7 +18,7 @@ const showPokemon = (arr) => {
   }
   document.getElementById('pokemonList').innerHTML = pokList;
 };
-// Definición de la función
+  // Definición de la función
 function cargar() {
   showPokemon(ordenarArrayAsc(arrPokemon));
   // FILTRADO POR KM
