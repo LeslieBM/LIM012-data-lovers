@@ -1,43 +1,45 @@
 import {
-  ordenarArrayAsc, ordenarArrayDes, ordenarArrayAz, ordenarArrayZa,
-// eslint-disable-next-line import/no-unresolved
+  ordenarArrayAsc, ordenarArrayDes, ordenarArrayAz, ordenarArrayZa, filtrarKM,
 } from './data.js';
-
 import data from './data/pokemon/pokemon.js';
 
 const arrPokemon = data.pokemon;
-
-const recorrerArray = (arr) => {
+const showPokemon = (arr) => {
+  let pokList = '';
   for (let i = 0; i < arr.length; i += 1) {
-    document.getElementById('MostarPokemones').innerHTML += `
-        <div class="contenedor">
-          <img src="${arr[i].img}">
-          <p>N°${arr[i].num}</p>
-          <p>${arr[i].name}</p>
-          <p>${arr[i].type}</p>
-        </div>`;
+    pokList += `
+      <div class="conteinerPokemon">
+        <img src="${arr[i].img}">
+        <p>N°${arr[i].num}</p>
+        <p>${arr[i].name}</p>
+        <p>${arr[i].type}</p>
+      </div>`;
   }
+  document.getElementById('pokemonList').innerHTML = pokList;
 };
-  // Definición de la función
+// Definición de la función
 function cargar() {
-  recorrerArray(ordenarArrayAsc(arrPokemon));
-  // ordenarArrayAsc(arrPokemon).forEach(recorrerArray);
+  showPokemon(ordenarArrayAsc(arrPokemon));
+  // FILTRADO POR KM
+  showPokemon(filtrarKM(arrPokemon));
+  // console.log(filtrarKM(arrPokemon).length);
+  // ordenarArrayAsc(arrPokemon).forEach(showPokemon);
 }
 window.addEventListener('load', cargar, false);
 
-document.getElementById('men').addEventListener('click', () => {
-  document.getElementById('MostarPokemones').innerHTML = '';
-  recorrerArray(ordenarArrayAsc(arrPokemon));
+document.getElementById('upward').addEventListener('click', () => {
+  document.getElementById('pokemonList').innerHTML = '';
+  showPokemon(ordenarArrayAsc(arrPokemon));
 });
-document.getElementById('may').addEventListener('click', () => {
-  document.getElementById('MostarPokemones').innerHTML = '';
-  recorrerArray(ordenarArrayDes(arrPokemon));
+document.getElementById('falling').addEventListener('click', () => {
+  document.getElementById('pokemonList').innerHTML = '';
+  showPokemon(ordenarArrayDes(arrPokemon));
 });
-document.getElementById('az').addEventListener('click', () => {
-  document.getElementById('MostarPokemones').innerHTML = '';
-  recorrerArray(ordenarArrayAz(arrPokemon));
+document.getElementById('sortAz').addEventListener('click', () => {
+  document.getElementById('pokemonList').innerHTML = '';
+  showPokemon(ordenarArrayAz(arrPokemon));
 });
-document.getElementById('za').addEventListener('click', () => {
-  document.getElementById('MostarPokemones').innerHTML = '';
-  recorrerArray(ordenarArrayZa(arrPokemon));
+document.getElementById('sortZa').addEventListener('click', () => {
+  document.getElementById('pokemonList').innerHTML = '';
+  showPokemon(ordenarArrayZa(arrPokemon));
 });
