@@ -26,3 +26,7 @@ export const ordenarArrayZa = (arr) => {
   });
   return arrPokemonesZa;
 };
+export const filtrarKM = (arr) => {
+  const arrFiltradoKM = arr.filter(object => object['buddy-distance-km'] === '3');
+  return arrFiltradoKM;
+};
