@@ -1,19 +1,39 @@
-body {
+body{
+    display:flex;
+    flex: wrap;
+    flex-direction: column;
+}
+header{
+    width: 100%;
+    height: 10%;
+    background: #205FA7;
+}
+#contenedorT{
+    width: 100%;
+    height: 100%;
+    align-items: ;
+}
+/*body {
 	margin: 0;
 	padding: 0;
 	font-size: 1em;
 	line-height: 1.5em;
-    padding-top: 5%; /* Relleno superior igual a la altura de la cabecera*/
+    padding-top: 5%; /* Relleno superior igual a la altura de la cabecera
     width: 100%;
     height: 100%;
+}
+body {
+    width:100%; 
+    height:50%; 
+    overflow: scroll;
 }
 .heder{
     width: 100%;
     height: 10%;
     background: #205FA7;
-    position: fixed;/* Hacemos que la cabecera tenga una posición*/
-    left: 0; /* Posicionamos la cabecera al lado izquierdo */
-	top: 0;/* Posicionamos la cabecera pegada arriba */
+    position: fixed;/* Hacemos que la cabecera tenga una posición
+    left: 0; /* Posicionamos la cabecera al lado izquierdo 
+	top: 0;/* Posicionamos la cabecera pegada arriba 
 }
 #contenedorT{
     display : flex;
@@ -21,19 +41,30 @@ body {
     height: 100%;
     text-align: center;
 }
+#title{
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(65, 61, 61);
+    font-size: 2em;
+    font-weight: bold;
+}
+#parr{
+    font-family: 'Bree Serif', serif;
+    color: rgb(65, 61, 61);
+    font-size: 1.5em;
+}
 #izquierda{
-    /* width: 15%; */
+    /* width: 15%; 
     height: 1000px;
     float:left;
     background: #FFCB05;
     display: flex;
-    position: fixed;/* Hacemos que la cabecera tenga una posición*/
+    position: fixed;/* Hacemos que la cabecera tenga una posición
     justify-content: space-around;
     flex-direction: column;
 }
 .menu{
     background: #FFCB05;
-    border: #F6F8FF 1px solid; 
+    border: #F6F8FF 1px solid;
     font-size: 20px;
     padding: 10px;
 }
@@ -45,7 +76,7 @@ body {
 }
 .demo{
     /*width: 25%;
-    border: 10px;*/
+    border: 10px;
     width: 90%;
     display: inline-flex;
     flex-wrap: wrap;
@@ -59,7 +90,7 @@ body {
 .interior{
     text-align: left;
 }
-/* Barra lateral */
+/* Barra lateral 
 #check{
     display: none;
 }
@@ -84,15 +115,16 @@ nav{
 }
 nav a{
     text-decoration: none;
-<<<<<<< HEAD
 }
 .link{
     background-color: #FFCB05;
     padding: 20px;
-    font-size: 12pt;
+    font-size: 1.1em;
+    font-family: 'Open Sans', sans-serif;
     transition: all .2s linear;
-    color: #F6F8FF;
+    color: rgb(65, 61, 61);
     border-bottom: 2px solid #F6F8FF ;
+    text-align: justify;
 }
 .link:hover{
     background-color: #205FA7;
@@ -100,27 +132,10 @@ nav a{
 #check:checked ~ .barra{
     transform: translateX(300px);
 }
-=======
-}
-.link{
-    background-color: #FFCB05;
-    padding: 20px;
-    font-size: 12pt;
-    transition: all .2s linear;
-    color: #F6F8FF;
-    border-bottom: 2px solid #F6F8FF ;
-}
-.link:hover{
-    background-color: #205FA7;
-}
-#check:checked ~ .barra{
-    transform: translateX(300px);
-}
->>>>>>> origin
 @media screen and (max-width:1100px) and (min-width:300px) {
-    /* celular */
+    /* celular 
     body {
-        padding-top: 10%; /* Relleno superior igual a la altura de la cabecera*/
+        padding-top: 10%; /* Relleno superior igual a la altura de la cabecera
     }
     .heder{
         height: 10%;
@@ -135,9 +150,18 @@ nav a{
         
 	font-size: 2em;
     }
-<<<<<<< HEAD
-}
-=======
 }
 
->>>>>>> origin
+#global {
+    height: 3000px;
+	width: 100%;
+	border: 1px solid #ddd;
+	background: #f1f1f1;
+	overflow-y: scroll;
+}
+
+#contenedorT {
+	padding:4px;
+    background:#fff;
+    display:-ms-flexbox;
+}
