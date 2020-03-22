@@ -1,84 +1,64 @@
-.ocultar{
-    display: none;
- }
-body {
-	margin: 0;
-	padding: 0;
-	font-size: 1em;
-	line-height: 1.5em;
-    padding-top: 5%; /* Relleno superior igual a la altura de la cabecera*/
+body{
+    margin: 0;/*este pegado a la caja*/
+    padding: 0;
+    background: #F6F8FF;
     width: 100%;
     height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5em;
+    line-height: 1em;/*interlineado de texto*/
 }
-.heder{
+header{
     width: 100%;
     height: 10%;
-    background: #205FA7;
-    position: fixed;/* Hacemos que la cabecera tenga una posición*/
-    left: 0; /* Posicionamos la cabecera al lado izquierdo */
-	top: 0;/* Posicionamos la cabecera pegada arriba */
-}
-#contenedorT{
-    display : flex;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-}
-#izquierda{
-    /* width: 15%; */
-    height: 1000px;
-    float:left;
-    background: #FFCB05;
     display: flex;
-    position: fixed;/* Hacemos que la cabecera tenga una posición*/
-    /*justify-content: space-around;*/
-    flex-direction: column;
+    background: #205FA7;
+    left: 0;/* Posicionamos la cabecera al lado izquierdo */
+    top: 0;/* Posicionamos la cabecera pegada arriba */
 }
-.menu{
-    background: #FFCB05;
-    border: #F6F8FF 1px solid; 
-    font-size: 20px;
-    padding: 10px;
+#header1{
+    width: 70%;
+    height: 100%;
+    margin-left: 5%;
 }
-#derecha{
+
+#header2{
+    width: 30%;
+    height: 100%;
+    margin-left: 10%;
+}
+.image{
+    width: 15%;
+    height: 60px;
+    margin-top: 2%;
+}
+#search{
+    padding: 1%;
+    font-size: 1em;
+    margin: 6%;
+    margin-top: 7%;
+}
+#container{
     width: 100%;
-    padding-left: 18%;
-    float:left;
-    background: #F6F8FF;
+    height: 85%;
+    display: flex;
 }
-.demo{
-    /*width: 25%;
-    border: 10px;*/
-    width: 90%;
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-.contenedor{
-    width: 20%;
-    margin: 1%;
-    border: #A1A1AE 1px solid; 
-}
-.interior{
-    text-align: left;
-}
-/* Barra lateral */
 #check{
     display: none;
 }
-#icone{
+#icon{
     cursor: pointer;
     padding: 15px;
     position: absolute;
     z-index: 1;
 }
-.barra{
+.bar{
     background: #FFCB05;
     height: 100%;
     width: 15%;
-    position: absolute;
+    position: absolute;/*quede fijo en pc*/
+    text-align: justify;
     transition: all .2s linear;
-    left: -300px;
 }
 nav{
     width: 100%;
@@ -91,60 +71,157 @@ nav a{
 .link{
     background-color: #FFCB05;
     padding: 20px;
-    font-size: 12pt;
+    font-size: 1em;/*tamaño de letra barra izquierda*/
     transition: all .2s linear;
-    color: #F6F8FF;
+    color: #413D3D;
     border-bottom: 2px solid #F6F8FF ;
 }
 .link:hover{
     background-color: #205FA7;
 }
-#check:checked ~ .barra{
-    transform: translateX(300px);
+#section{
+    width: 85%;
+    padding-left: 15%;
+    text-align: center;
+    /* float:left; */
+}
+#pokedex{
+    width: 100%;
+    height: 100%;
+}
+.title{
+    font-family: 'Bree Serif', serif;
+    font-size: 2em;
+}
+/*botones desplegables*/
+ul.dropDown,
+ul.dropDown * {
+margin: 0;
+padding: 0;
+border: 0;
+}
+ul.dropDown {
+margin: 10px auto;
+padding: 0;
+list-style: none;
+width: 25%;
+font-size: 0.8em;
+text-align: center;
+}
+ul.dropDown li {
+list-style: none;
+}
+ul.dropDown li a {
+display: block;
+padding: 10px 10px 10px 20px;
+background: #FFCB05;
+color: #413D3D;
+border-bottom: 1px solid #F6F8FF;
+border-top: 1px solid #F6F8FF;
+text-decoration: none;
+box-sizing: border-box;
+}
+ul.dropDown li ul {
+max-height: 0;
+margin: 0;
+padding: 0;
+list-style: none;
+overflow: hidden;
+transition: .3s all ease-in;
+}
+ul.dropDown li li a {
+padding: 10px 10px 10px 40px;
+background: #FFCB05;
+color: #413D3D;
+font-size: 1em;
+border: 0;
+border-bottom: 1px solid #F6F8FF;
+box-sizing: border-box;
+}
+ul.dropDown li li:last-child a {
+border-bottom: 0;
+}
+ul.dropDown li:hover ul {
+max-height: 300px;
+transition: .3s all ease-in;
+}
+ul.dropDown li a:hover {
+background: #205FA7;
+color: #F6F8FF;
+}
+/*contenedor de pokemones*/
+.pokemonList{
+    width: 100%;
+    /* height: 95%; 
+    overflow : scroll;*/
+    display: inline-flex;
+    line-height: 0.5em;
+    justify-content: space-around;
+    flex-wrap: wrap;   
+}
+.conteinerPokemon{
+    width: 20%;
+    margin: 1%;
+    border: #A1A1AE 1px solid;
+}
+footer{
+    width: 100%;
+    height: 30px;
+    background: #205FA7;
+    text-align: center;
+    color: #F6F8FF;
+    left: 0; /* Posicionamos la cabecera al lado izquierdo */
+}
+.socialNetworks{
+    width: 20px;
+    height: 20px;
 }
 @media screen and (max-width:1100px) and (min-width:300px) {
     /* celular */
-    body {
-        padding-top: 10%; /* Relleno superior igual a la altura de la cabecera*/
+    body{
+        font-size: 1.5em;
     }
-    .heder{
+    #section{
+        width: 100%;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .image{
+        width: 50%;
+        height: 100%;
+        margin-top: 1%;
+    }
+    #header1{
+        width: 40%;
+        height: 100%;
+        margin-left: 10%;
+    }
+    #header2{
+        width: 60%;
+        height: 100%;
+        margin-left: 10%;
+    }
+    .bar{
+        left: -300px;
+        width: 25%;
+    }
+    .link{
+        font-size: 16pt;
+    }
+    #check:checked ~ .bar{
+        transform: translateX(300px);
+    }
+    header{
         height: 10%;
     }
-    .imagen img{
-        width: 50px;
-        height: 10px;
+    .conteinerPokemon{
+        width: 20%;
+        margin: 2%;
+        padding: 2%;   
+    	font-size: 1em;
     }
-    .contenedor{
-        width: 45%;
-        margin: 1%;
-        
-	font-size: 2em;
+    .pokemonList{
+        line-height: 0.5em;
+        overflow : visible;
     }
 }
-/* @media screen and (min-width:1024px) { 
-    body {
-        padding-top: 10%; Relleno superior igual a la altura de la cabecera
-    }
-    .barra{
-        background: green;
-    }
-    .imagen img{
-        width: 10%;
-        height: 100%;
-    }
-}*/
-/* @media screen and (max-width:640px) {
-    body {
-        padding-top: 5%; Relleno superior igual a la altura de la cabecera
-    }
-    .imagen img{
-        width: 10%;
-        height: 100%;
-    }
-    .heder{
-        height: 10%;
-    }
-    .barra{
-        background: purple;
-    }
-}*/
