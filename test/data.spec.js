@@ -1,49 +1,196 @@
 import {
   ordenarArrayAsc, ordenarArrayDes, ordenarArrayAz, ordenarArrayZa,
-<<<<<<< HEAD
-} from './src/data.js';
-=======
 } from '../src/data.js';
->>>>>>> origin
 
+const inputOrder = [{
+  num: '001',
+  name: 'bulbasaur',
+  img: 'https://www.serebii.net/pokemongo/pokemon/001.png',
+  type: [
+    'grass',
+    'poison'],
+},
+{
+  num: '002',
+  name: 'ivysaur',
+  img: 'https://www.serebii.net/pokemongo/pokemon/002.png',
+  type: [
+    'grass',
+    'poison'],
+},
+{
+  num: '003',
+  name: 'venusaur',
+  img: 'https://www.serebii.net/pokemongo/pokemon/003.png',
+  type: [
+    'grass',
+    'poison'],
+},
+{
+  num: '004',
+  name: 'charmander',
+  img: 'https://www.serebii.net/pokemongo/pokemon/004.png',
+  type: [
+    'fire'],
+},
+];
+const outputOrderAsc = [{
+  num: '001',
+  name: 'bulbasaur',
+  img: 'https://www.serebii.net/pokemongo/pokemon/001.png',
+  type: [
+    'grass',
+    'poison'],
+},
+{
+  num: '002',
+  name: 'ivysaur',
+  img: 'https://www.serebii.net/pokemongo/pokemon/002.png',
+  type: [
+    'grass',
+    'poison'],
+},
+{
+  num: '003',
+  name: 'venusaur',
+  img: 'https://www.serebii.net/pokemongo/pokemon/003.png',
+  type: [
+    'grass',
+    'poison'],
+},
+{
+  num: '004',
+  name: 'charmander',
+  img: 'https://www.serebii.net/pokemongo/pokemon/004.png',
+  type: [
+    'fire'],
+},
+];
+const outputOrderDes = [{
+  num: '004',
+  name: 'charmander',
+  img: 'https://www.serebii.net/pokemongo/pokemon/004.png',
+  type: [
+    'fire'],
+},
+{
+  num: '003',
+  name: 'venusaur',
+  img: 'https://www.serebii.net/pokemongo/pokemon/003.png',
+  type: [
+    'grass',
+    'poison'],
+},
+{
+  num: '002',
+  name: 'ivysaur',
+  img: 'https://www.serebii.net/pokemongo/pokemon/002.png',
+  type: [
+    'grass',
+    'poison'],
+},
+{
+  num: '001',
+  name: 'bulbasaur',
+  img: 'https://www.serebii.net/pokemongo/pokemon/001.png',
+  type: [
+    'grass',
+    'poison'],
+},
+];
+const outputOrderAz = [{
+  num: '001',
+  name: 'bulbasaur',
+  img: 'https://www.serebii.net/pokemongo/pokemon/001.png',
+  type: [
+    'grass',
+    'poison'],
+},
+{
+  num: '004',
+  name: 'charmander',
+  img: 'https://www.serebii.net/pokemongo/pokemon/004.png',
+  type: [
+    'fire'],
+},
+{
+  num: '002',
+  name: 'ivysaur',
+  img: 'https://www.serebii.net/pokemongo/pokemon/002.png',
+  type: [
+    'grass',
+    'poison'],
+},
+{
+  num: '003',
+  name: 'venusaur',
+  img: 'https://www.serebii.net/pokemongo/pokemon/003.png',
+  type: [
+    'grass',
+    'poison'],
+},
+];
+const outputOrderZa = [{
+  num: '003',
+  name: 'venusaur',
+  img: 'https://www.serebii.net/pokemongo/pokemon/003.png',
+  type: [
+    'grass',
+    'poison'],
+},
+{
+  num: '002',
+  name: 'ivysaur',
+  img: 'https://www.serebii.net/pokemongo/pokemon/002.png',
+  type: [
+    'grass',
+    'poison'],
+},
+{
+  num: '004',
+  name: 'charmander',
+  img: 'https://www.serebii.net/pokemongo/pokemon/004.png',
+  type: [
+    'fire'],
+},
+{
+  num: '001',
+  name: 'bulbasaur',
+  img: 'https://www.serebii.net/pokemongo/pokemon/001.png',
+  type: [
+    'grass',
+    'poison'],
+},
+];
 describe('ordenado Ascendente', () => {
   it('is a function', () => {
     expect(typeof ordenarArrayAsc).toBe('function');
   });
-  test('ordenar', () => {
-    expect(ordenarArrayAsc()).toBe();
+  it('ordenarAsc', () => {
+    expect(ordenarArrayAsc(inputOrder)).toEqual(outputOrderAsc);
   });
 });
 describe('ordenado Descendente', () => {
   it('is a function', () => {
     expect(typeof ordenarArrayDes).toBe('function');
   });
+  it('ordenarDes', () => {
+    expect(ordenarArrayDes(inputOrder)).toEqual(outputOrderDes);
+  });
 });
 describe('ordenado de Az', () => {
   it('is a function', () => {
     expect(typeof ordenarArrayAz).toBe('function');
+  });
+  it('ordenarDes', () => {
+    expect(ordenarArrayAz(inputOrder)).toEqual(outputOrderAz);
   });
 });
 describe('ordenado de Za', () => {
   it('is a function', () => {
     expect(typeof ordenarArrayZa).toBe('function');
   });
+  it('ordenarDes', () => {
+    expect(ordenarArrayZa(inputOrder)).toEqual(outputOrderZa);
+  });
 });
-//---------------------------------------
-// import { example, anotherExample } from '../src/data.js';
-// describe('example', () => {
-//   it('is a function', () => {
-//     expect(typeof example).toBe('function');
-//   });
-//   it('returns `example`', () => {
-//     expect(example()).toBe('example');
-//   });
-// });
-// describe('anotherExample', () => {
-//   it('is a function', () => {
-//     expect(typeof anotherExample).toBe('function');
-//   });
-//   it('returns `anotherExample`', () => {
-//     expect(anotherExample()).toBe('OMG');
-//   });
-// });
