@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Data Lovers</title>
+    <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=2"></meta>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="fonts.css">
+  </head>
+  <body>
+    <header>
+      <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Pok%C3%A9mon_GO_logo.svg/1200px-Pok%C3%A9mon_GO_logo.svg.png">
+      <input type="text" id="search" placeholder="   Buscar Pokemon   🔍">
+    </header>
+    <div id="container">
+      <div>
+        <input type="checkbox" id="check">
+        <label id="icon" for="check" ><img src="menu.png"></label>
+        <div class="bar">
+          <nav>
+            <button id="showPokedex" class="link">Pokedex</button>
+            <button id="showGetCandy" class="link">Ganar caramelos</button>
+            <button class="link">Comparar pokemones</button>
+            <button id="showPowerData" class="link">Datos de poder</button>
+          </nav>
+        </div>
+      </div>
+      <div id="section">
+        <div id="pokedex">
+          <p class="title">POKEDEX</p>
+          <p>Encuentra todo lo que necesitas saber acerca de tus pokemones.<br>
+            Selecciona un pokémon para ver sus principales características.</p>
+          <div>
+            <ul class="dropDown">
+              <li><a href="#">ORDENAR</a>
+                <ul>
+                  <li><a href="#" id="upward">Menor a mayor</a></li>
+                  <li><a href="#" id="falling">Mayor a menor</a></li>
+                  <li><a href="#" id="sortAz">A-Z</a></li>
+                  <li><a href="#" id="sortZa">Z-A</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div id="pokemonList" class="pokemonList"></div>
+        </div>
+        <div id="getCandy">
+          <p class="title">GANAR CARAMELOS</p>
+          <p>Elige tu compañero pokémon favorito y gana caramelos recorriendo km a su lado.<br>
+            Recuerda que cada pokémon tiene un número de kilómetros definido y puedes cambiar de compañero cuando lo desees.</p>
+          <div>
+            <button id="oneKm" class="btnGet">Caminar 1km</button>
+            <button id="threeKm" class="btnGet">Caminar 3km</button>
+            <button id="fiveKm" class="btnGet">Caminar 5km</button>
+            <button id="twentyKm" class="btnGet">Caminar 20km</button>
+          </div>
+          <p id="total"></p>
+          <div id="pokemonList2" class="pokemonList">
+          </div>
+        </div> 
+        <div id="powerData">
+          <p class="title">DATOS DE PODER</p>
+          <p>Visualiza los pokemones con mejores estadísticas de poder y prepárate para las batallas.</p>
+          <div>
+            <button id="atack" class="btnGet">Ataque</button>
+            <button id="defense" class="btnGet">Defensa</button>
+            <button id="health" class="btnGet">Salud</button>
+            <button id="maxCp" class="btnGet">Máx. CP</button>
+            <button id="maxHp" class="btnGet">Máx. HP</button>
+          </div>
+          <table id="powerTable"></table>
+        </div>  
+      </div>   
+      </div>
+    </div>
+    <footer >
+      <div id="author"> Created by Portocarrero&Benel&copy</div>
+      <div class="social"> Síguenos en:
+        <a href="https://www.facebook.com/" class="icon icon-facebook" target="_blank"></a>
+        <a href="https://www.twitter.com/" class="icon icon-twitter" target="_blank"></a>
+        <a href="https://www.youtube.com/" class="icon icon-youtube" target="_blank"></a>
+        <a href="https://www.instagram.com/" class="icon icon-instagram" target="_blank"></a>
+      </div>
+    </footer>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
