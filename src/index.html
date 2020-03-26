@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Data Lovers</title>
+    <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=2"></meta>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="fonts.css">
   </head>
   <body>
     <header>
-      <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Pok%C3%A9mon_GO_logo.svg/1200px-Pok%C3%A9mon_GO_logo.svg.png">
+      <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Pok%C3%A9mon_GO_logo.svg/1200px-Pok%C3%A9mon_GO_logo.svg.png">
       <input type="text" id="search" placeholder="   Buscar Pokemon   🔍">
     </header>
     <div id="container">
@@ -20,14 +21,15 @@
             <button id="showPokedex" class="link">Pokedex</button>
             <button id="showGetCandy" class="link">Ganar caramelos</button>
             <button class="link">Comparar pokemones</button>
-            <button class="link">Datos de poder</button>
+            <button id="showPowerData" class="link">Datos de poder</button>
           </nav>
         </div>
       </div>
       <div id="section">
         <div id="pokedex">
           <p class="title">POKEDEX</p>
-          <p>Aquí encontrarás todo lo que necesitas saber acerca de tus pokemones. <br> Selecciona un pókemon para ver sus principales características.</p>
+          <p>Encuentra todo lo que necesitas saber acerca de tus pokemones.<br>
+            Selecciona un pokémon para ver sus principales características.</p>
           <div>
             <ul class="dropDown">
               <li><a href="#">ORDENAR</a>
@@ -43,17 +45,31 @@
           <div id="pokemonList" class="pokemonList"></div>
         </div>
         <div id="getCandy">
-          <p class="title">GANA CARAMELOS</p>
-          <p>Elige tu compañero pókemon favorito y gana caramelos recorriendo kilómetros a su lado.<br>
-            Recuerda que cada pókemon tiene un número de kilómetros definido y puedes cambiar de compañero cuando lo desees.</p>
+          <p class="title">GANAR CARAMELOS</p>
+          <p>Elige tu compañero pokémon favorito y gana caramelos recorriendo km a su lado.<br>
+            Recuerda que cada pokémon tiene un número de kilómetros definido y puedes cambiar de compañero cuando lo desees.</p>
           <div>
-            <button id="oneKm">Caminar 1km</button>
-            <button id="threeKm">Caminar 3km</button>
-            <button id="fiveKm">Caminar 5km</button>
+            <button id="oneKm" class="btnGet">Caminar 1km</button>
+            <button id="threeKm" class="btnGet">Caminar 3km</button>
+            <button id="fiveKm" class="btnGet">Caminar 5km</button>
+            <button id="twentyKm" class="btnGet">Caminar 20km</button>
           </div>
-          <p id="totalPokemon"></p>
-          <div id="pokemonList2" class="pokemonList"></div>
-        </div>   
+          <p id="total"></p>
+          <div id="pokemonList2" class="pokemonList">
+          </div>
+        </div> 
+        <div id="powerData">
+          <p class="title">DATOS DE PODER</p>
+          <p>Visualiza los pokemones con mejores estadísticas de poder y prepárate para las batallas.</p>
+          <div>
+            <button id="atack" class="btnGet">Ataque</button>
+            <button id="defense" class="btnGet">Defensa</button>
+            <button id="health" class="btnGet">Salud</button>
+            <button id="maxCp" class="btnGet">Máx. CP</button>
+            <button id="maxHp" class="btnGet">Máx. HP</button>
+          </div>
+          <table id="powerTable"></table>
+        </div>  
       </div>   
       </div>
     </div>

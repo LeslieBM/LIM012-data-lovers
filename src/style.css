@@ -1,3 +1,6 @@
+.ocultar{
+    display: none;
+ }
 body{
     background: #F6F8FF;
     width: 100%;
@@ -12,10 +15,7 @@ body{
     flex:wrap;
     flex-direction: column;
     align-items: flex-start;
-    
-}
-.ocultar{
-    display:none;
+    line-height: 1.3em;
 }
 header{
     width: 100%;
@@ -27,10 +27,9 @@ header{
     justify-content: space-between;
     align-items: center;
 }
-
-.logo{
+.image{
     width: 8em;
-    height: 5em;
+    height: 4.5em;
     margin-left: 1em;
     align-self: center;
 }
@@ -63,8 +62,11 @@ header{
     height: 100%;
     width: 15%;
     position: absolute;
-    /*quedefijoenpc*/text-align: justify;
     transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -ms-transition: all .2s linear;
+    -o-transition: all .2s linear;
 }
 nav{
     width: 100%;
@@ -73,19 +75,19 @@ nav{
 }
 .link{
     width: 100%;
+    text-align: justify;
+    outline:none;
     background-color: #FFCB05;
     padding: 1em;
     font-size: 1em;
-    /*tamañodeletrabarraizquierda*/
-    transition: all .2s linear;
+    /*tamañodeletrabarraizquierda*/transition: all .2s linear;
     color: #413D3D;
-    border:0;
+    border: 0;
     border-bottom: 2px solid #F6F8FF ;
-    text-align: start;
 }
 .link:hover{
     background-color: #205FA7;
-    color: ivory;
+    color: #F6F8FF;
 }
 #section{
     width: 85%;
@@ -101,12 +103,18 @@ nav{
     font-family: 'Bree Serif', serif;
     font-size: 2em;
 }
-p{
-    line-height: 1.2em;
+.name{
+    text-transform: capitalize;
+}
+.type{
+    padding: 0.8em;
+    background-color: #205FA7;
+    color: white;
+    text-transform: capitalize;
+    letter-spacing: 0.2em;
 }
 /*botones desplegables*/
-ul.dropDown,
-ul.dropDown * {
+ul.dropDown {
 margin: 0;
 padding: 0;
 border: 0;
@@ -115,7 +123,7 @@ ul.dropDown {
 margin: 10px auto;
 padding: 0;
 list-style: none;
-width: 25%;
+width: 12%;
 font-size: 0.8em;
 text-align: center;
 }
@@ -132,12 +140,17 @@ border-top: 1px solid #F6F8FF;
 text-decoration: none;
 box-sizing: border-box;
 }
-ul.dropDown li ul { 
-max-height: 0; 
-margin: 0; padding: 0; 
-list-style: none; 
-overflow: hidden; 
-transition: .3s all ease-in; 
+ul.dropDown li ul {
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    transition: .3s all ease-in;
+    -webkit-transition: .3s all ease-in;
+    -moz-transition: .3s all ease-in;
+    -ms-transition: .3s all ease-in;
+    -o-transition: .3s all ease-in;
 }
 ul.dropDown li li a {
 padding: 10px 10px 10px 40px;
@@ -151,9 +164,13 @@ box-sizing: border-box;
 ul.dropDown li li:last-child a {
 border-bottom: 0;
 }
-ul.dropDown li:hover ul { 
-max-height: 300px; 
-transition: .3s all ease-in; 
+ul.dropDown li:hover ul {
+    max-height: 300px;
+    transition: .3s all ease-in;
+    -webkit-transition: .3s all ease-in;
+    -moz-transition: .3s all ease-in;
+    -ms-transition: .3s all ease-in;
+    -o-transition: .3s all ease-in;
 }
 ul.dropDown li a:hover {
 background: #205FA7;
@@ -172,6 +189,35 @@ color: #F6F8FF;
     width: 20%;
     margin: 1%;
     border: #A1A1AE 1px solid;
+    color: #205FA7;
+    font-weight: bold;
+}
+table{
+    font-size: 1em;
+    width: 50%;
+    height: 80%;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-collapse: collapse;
+    position: center;
+}
+table tr{
+    padding: 5px;
+}
+table td, table th {
+    border: 1px solid #205FA7;
+    padding: 10px;
+    text-align: center;
+}
+table th {
+    text-transform: uppercase;
+    background-color: #205FA7;
+    color: white;
+}
+table td {
+    text-transform: capitalize;
 }
 @media screen and (max-width:1100px) and (min-width:300px) {
     /* celular */
@@ -200,6 +246,9 @@ color: #F6F8FF;
     header{
         height: 10%;
     }
+    ul.dropDown {
+        width: 25%;
+        }
     .conteinerPokemon{
         width: 20%;
         margin: 2%;
@@ -208,7 +257,6 @@ color: #F6F8FF;
     }
     .pokemonList{
         line-height: 0.5em;
-        overflow : visible;
     }
 }
 footer{
@@ -248,4 +296,16 @@ footer{
 }
 .icon:hover{
     padding: 0.8rem;
+}
+.btnGet{
+    background: #FFCB05;
+    border: 2px solid #F6F8FF ;
+    padding: 0.5em;
+    font-size: 1em;
+    color: #413D3D;
+    outline:none;
+}
+.btnGet:hover{
+    background-color: #205FA7;
+    color: #F6F8FF;
 }
