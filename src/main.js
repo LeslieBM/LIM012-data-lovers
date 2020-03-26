@@ -1,356 +1,226 @@
 import {
-  sortArray, filterKm, sortPower, compareOnePokemon, searchPokemon, mainSearchPokemon,
+  sortArrayAsc, sortArrayDes, sortArrayAz, sortArrayZa,
+  filterOneKm, filterthreeKm, filterFiveKm, filterTwentyKm,
+  sortAtack, sortDefense, sortHealth, sortMaxCp, sortMaxHp,
 } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
+document.getElementById('getCandy').classList.add('ocultar');
+document.getElementById('powerData').classList.add('ocultar');
 const arrPokemon = data.pokemon;
-// --------------------------------------------------------------------------------
 const showPokemon = (arr) => {
   let pokList = '';
   for (let i = 0; i < arr.length; i += 1) {
     pokList += `
-      <div class="conteinerPokemon">
-        <img src="${arr[i].img}">
-        <p>N°${arr[i].num}</p>
-        <p class="name">${arr[i].name}</p>
+        <div class="conteinerPokemon">
+          <img src="${arr[i].img}">
+          <p>N°${arr[i].num}</p>
+          <p class="name">${arr[i].name}</p>
           <p class="type">${arr[i].type}</p>
-      </div>`;
+        </div>`;
   }
   document.getElementById('pokemonList').innerHTML = pokList;
 };
-const loadPokedex = () => {
-  showPokemon(arrPokemon);
-  document.getElementById('getCandy').classList.add('ocultar');
-  document.getElementById('powerData').classList.add('ocultar');
-  document.getElementById('comparePokemon').classList.add('ocultar');
+const showPokemon2 = (arr) => {
+  let pokList2 = '';
+  for (let i = 0; i < arr.length; i += 1) {
+    pokList2 += `
+        <div class="conteinerPokemon">
+          <img src="${arr[i].img}">
+          <p>N°${arr[i].num}</p>
+          <p class="name">${arr[i].name}</p>
+          <p class="type">${arr[i].type}</p>
+          <p class="km">${arr[i]['buddy-distance-km']} Km</p>
+        </div>`;
+  }
+  document.getElementById('pokemonList2').innerHTML = pokList2;
 };
-window.addEventListener('load', loadPokedex);
+
+// Definición de la función
+const cargar = () => {
+  showPokemon(arrPokemon);
+};
+window.addEventListener('load', cargar, false);
 
 document.querySelector('#showPokedex').addEventListener('click', () => {
   document.getElementById('getCandy').classList.add('ocultar');
   document.getElementById('powerData').classList.add('ocultar');
   document.getElementById('pokedex').classList.remove('ocultar');
-  showPokemon(sortArray(arrPokemon, 'upward'));
+  showPokemon(sortArrayAsc(arrPokemon));
 });
-// Ordenado Nombre - Numero
-const orderArray = document.querySelector('#dropDown');
-orderArray.addEventListener('change', () => {
-  const orderSelect = orderArray.value;
-  document.getElementById('pokemonList').innerHTML = '';
-  showPokemon(sortArray(arrPokemon, orderSelect));
-});
-// --------------------------------------------------------------------------------
-const showPokemon2 = (arr) => {
-  let pokList2 = '';
-  for (let i = 0; i < arr.length; i += 1) {
-    pokList2 += `
-          <div class="conteinerPokemon">
-            <img src="${arr[i].img}">
-            <p>N°${arr[i].num}</p>
-            <p class="name">${arr[i].name}</p>
-            <p class="km">${arr[i]['buddy-distance-km']} Km</p>
-            <p class="type">${arr[i].type}</p>
-          </div>`;
-  }
-  document.getElementById('pokemonList2').innerHTML = pokList2;
-};
 document.querySelector('#showGetCandy').addEventListener('click', () => {
   document.getElementById('pokedex').classList.add('ocultar');
   document.getElementById('powerData').classList.add('ocultar');
   document.getElementById('getCandy').classList.remove('ocultar');
-  document.getElementById('total').innerHTML = '';
-  showPokemon2(sortArray(arrPokemon, 'upward'));
+  showPokemon2(arrPokemon);
 });
-// filtrar por km
-const filterArray = document.querySelector('#filterCandy');
-filterArray.addEventListener('change', () => {
-  const filterSelect = filterArray.value;
-  document.getElementById('total').innerHTML = '';
-  document.getElementById('pokemonList2').innerHTML = '';
-  const totalKm = filterKm(arrPokemon, filterSelect).length;
-  document.getElementById('total').innerHTML = `N° pokemones: ${totalKm}`;
-  showPokemon2(filterKm(arrPokemon, filterSelect));
-});
-
-document.querySelector('#showComparePokemon').addEventListener('click', () => {
+document.querySelector('#showPowerData').addEventListener('click', () => {
   document.getElementById('getCandy').classList.add('ocultar');
   document.getElementById('pokedex').classList.add('ocultar');
-  document.getElementById('powerData').classList.add('ocultar');
-  document.getElementById('comparePokemon').classList.remove('ocultar');
+  document.getElementById('powerData').classList.remove('ocultar');
 });
-// Sugerencia del buscador 1
-const searchPokemon1 = document.getElementById('searchPokemon1');
-searchPokemon1.addEventListener('keyup', () => {
-  const inputNameSelect = searchPokemon1.value.toLowerCase();
-  if (searchPokemon1.value !== '') {
-    document.getElementById('showListpokemon1').innerHTML = '';
-    for (let i = 0; i < searchPokemon(arrPokemon, inputNameSelect).length; i += 1) {
-      document.getElementById('showListpokemon1').innerHTML += `
-          <li class="li">${searchPokemon(arrPokemon, inputNameSelect)[i].name}</li>
-          `;
-    }
-  }
-  if (searchPokemon1.value === '') {
-    document.getElementById('showListpokemon1').innerHTML = '';
-  }
+document.querySelector('#upward').addEventListener('click', () => {
+  document.getElementById('pokemonList').innerHTML = '';
+  showPokemon(sortArrayAsc(arrPokemon));
 });
-// Sugerencia del buscador 2
-const searchPokemon2 = document.getElementById('searchPokemon2');
-searchPokemon2.addEventListener('keyup', () => {
-  const inputNameSelect = searchPokemon2.value.toLowerCase();
-  if (searchPokemon2.value !== '') {
-    document.getElementById('showListpokemon2').innerHTML = '';
-    for (let i = 0; i < searchPokemon(arrPokemon, inputNameSelect).length; i += 1) {
-      document.getElementById('showListpokemon2').innerHTML += `
-          <li class="li">${searchPokemon(arrPokemon, inputNameSelect)[i].name}</li>
-          `;
-    }
-  }
-  if (searchPokemon2.value === '') {
-    document.getElementById('showListpokemon2').innerHTML = '';
-  }
+document.querySelector('#falling').addEventListener('click', () => {
+  document.getElementById('pokemonList').innerHTML = '';
+  showPokemon(sortArrayDes(arrPokemon));
 });
-// mostrar datos de comparacion
-const showComparePokemon = (arr) => {
-  const pokemonOne = `
-      <div class="conteinerPokemonCompare">
-        <img src="${arr[0].img}">
-        <p>N°${arr[0].num}</p>
-        <p class="name">${arr[0].name}</p>
-      </div>
-      <div>
-        <p>Resistencias: ${arr[0].resistant}</p>
-        <p>Debilidades: ${arr[0].weaknesses}</p>
-      </div>`;
-  document.getElementById('showPokemon1').innerHTML = pokemonOne;
-};
-const showCompareTableMove = (arr) => {
-  document.getElementById('table1Pokemon1').innerHTML += `
-    <tr>
-      <th>Tipo de pokemon</th>
-      <th>Tipo de Movimiento</th>
-      <th>Movimineto</th>
-      <th>STAB</th>
-      <th>DPS</th>
-      <th>EPS</th>
-    </tr>`;
-  for (let i = 0; i < arr[0].type.length; i += 1) {
-    for (let j = 0; j < arr[0]['quick-move'].length; j += 1) {
-      let stab;
-      const baseDamage = parseInt((arr[0]['quick-move'][j]['base-damage']), 10);
-      const energy = parseFloat((arr[0]['quick-move'][j].energy), 10);
-      const time = parseFloat((arr[0]['quick-move'][j]['move-duration-seg']), 10);
-      if (arr[0].type[i] === arr[0]['quick-move'][j].type) {
-        stab = baseDamage + (baseDamage * 0.2);
-      } else {
-        stab = baseDamage;
-      }
-      document.getElementById('table1Pokemon1').innerHTML += `
-            <tr>
-              <td>${arr[0].type[i]}</td>
-              <td>${arr[0]['quick-move'][j].type}</td>
-              <td>${arr[0]['quick-move'][j].name}</td>
-              <td>${Math.round(stab * 100) / 100}</td>
-              <td>${Math.round((baseDamage / stab) * 100) / 100}</td>
-              <td>${Math.round((energy / time) * 100) / 100}</td>
-            </tr>`;
-    }
-  }
-};
-const showCompareTableAttack = (arr) => {
-  document.getElementById('table2Pokemon1').innerHTML += `
-    <tr>
-      <th>Tipo de pokemon</th>
-      <th>Tipo de Movimiento</th>
-      <th>Ataque</th>
-      <th>STAB</th>
-      <th>DPS</th>
-      <th>EPS</th>
-    </tr>`;
-  for (let i = 0; i < arr[0].type.length; i += 1) {
-    for (let j = 0; j < arr[0]['special-attack'].length; j += 1) {
-      let stab;
-      const baseDamage = parseInt((arr[0]['special-attack'][j]['base-damage']), 10);
-      const energy = parseFloat((arr[0]['special-attack'][j].energy), 10);
-      const time = parseFloat((arr[0]['special-attack'][j]['move-duration-seg']), 10);
-      if (arr[0].type[i] === arr[0]['special-attack'][j].type) {
-        stab = baseDamage + (baseDamage * 0.2);
-      } else {
-        stab = baseDamage;
-      }
-      document.getElementById('table2Pokemon1').innerHTML += `
-            <tr>
-              <td>${arr[0].type[i]}</td>
-              <td>${arr[0]['special-attack'][j].type}</td>
-              <td>${arr[0]['special-attack'][j].name}</td>
-              <td>${Math.round(stab * 100) / 100}</td>
-              <td>${Math.round((baseDamage / stab) * 100) / 100}</td>
-              <td>${Math.round((energy / time) * 100) / 100}</td>
-            </tr>`;
-    }
-  }
-};
-const showComparePokemon2 = (arr) => {
-  const pokemonOne = `
-      <div class="conteinerPokemonCompare">
-        <img src="${arr[0].img}">
-        <p>N°${arr[0].num}</p>
-        <p class="name">${arr[0].name}</p>
-      </div>
-      <div>
-        <p>Resistencias: ${arr[0].resistant}</p>
-        <p>Debilidades: ${arr[0].weaknesses}</p>
-      </div>`;
-  document.getElementById('showPokemon2').innerHTML = pokemonOne;
-};
-const showCompareTableMove2 = (arr) => {
-  document.getElementById('table1Pokemon2').innerHTML += `
-    <tr>
-      <th>Tipo de pokemon</th>
-      <th>Tipo de Movimiento</th>
-      <th>Movimineto</th>
-      <th>STAB</th>
-      <th>DPS</th>
-      <th>EPS</th>
-    </tr>`;
-  for (let i = 0; i < arr[0].type.length; i += 1) {
-    for (let j = 0; j < arr[0]['quick-move'].length; j += 1) {
-      let stab;
-      const baseDamage = parseInt((arr[0]['quick-move'][j]['base-damage']), 10);
-      const energy = parseFloat((arr[0]['quick-move'][j].energy), 10);
-      const time = parseFloat((arr[0]['quick-move'][j]['move-duration-seg']), 10);
-      if (arr[0].type[i] === arr[0]['quick-move'][j].type) {
-        stab = baseDamage + (baseDamage * 0.2);
-      } else {
-        stab = baseDamage;
-      }
-      document.getElementById('table1Pokemon2').innerHTML += `
-            <tr>
-              <td>${arr[0].type[i]}</td>
-              <td>${arr[0]['quick-move'][j].type}</td>
-              <td>${arr[0]['quick-move'][j].name}</td>
-              <td>${Math.round(stab * 100) / 100}</td>
-              <td>${Math.round((baseDamage / stab) * 100) / 100}</td>
-              <td>${Math.round((energy / time) * 100) / 100}</td>
-            </tr>`;
-    }
-  }
-};
-const showCompareTableAttack2 = (arr) => {
-  document.getElementById('table2Pokemon2').innerHTML += `
-    <tr>
-      <th>Tipo de pokemon</th>
-      <th>Tipo de Movimiento</th>
-      <th>Ataque</th>
-      <th>STAB</th>
-      <th>DPS</th>
-      <th>EPS</th>
-    </tr>`;
-  for (let i = 0; i < arr[0].type.length; i += 1) {
-    for (let j = 0; j < arr[0]['special-attack'].length; j += 1) {
-      let stab;
-      const baseDamage = parseInt((arr[0]['special-attack'][j]['base-damage']), 10);
-      const energy = parseFloat((arr[0]['special-attack'][j].energy), 10);
-      const time = parseFloat((arr[0]['special-attack'][j]['move-duration-seg']), 10);
-      if (arr[0].type[i] === arr[0]['special-attack'][j].type) {
-        stab = baseDamage + (baseDamage * 0.2);
-      } else {
-        stab = baseDamage;
-      }
-      document.getElementById('table2Pokemon2').innerHTML += `
-            <tr>
-              <td>${arr[0].type[i]}</td>
-              <td>${arr[0]['special-attack'][j].type}</td>
-              <td>${arr[0]['special-attack'][j].name}</td>
-              <td>${Math.round(stab * 100) / 100}</td>
-              <td>${Math.round((baseDamage / stab) * 100) / 100}</td>
-              <td>${Math.round((energy / time) * 100) / 100}</td>
-            </tr>`;
-    }
-  }
-};
-document.querySelector('#twoPokemon').addEventListener('click', () => {
-  document.getElementById('showListpokemon1').innerHTML = '';
-  document.getElementById('showListpokemon2').innerHTML = '';
-  const inputNameSelect1 = document.getElementById('searchPokemon1').value.toLowerCase();
-  const inputNameSelect2 = document.getElementById('searchPokemon2').value.toLowerCase();
-  showComparePokemon(compareOnePokemon(arrPokemon, inputNameSelect1));
-  showCompareTableMove(compareOnePokemon(arrPokemon, inputNameSelect1));
-  showCompareTableAttack(compareOnePokemon(arrPokemon, inputNameSelect1));
-  showComparePokemon2(compareOnePokemon(arrPokemon, inputNameSelect2));
-  showCompareTableMove2(compareOnePokemon(arrPokemon, inputNameSelect2));
-  showCompareTableAttack2(compareOnePokemon(arrPokemon, inputNameSelect2));
+document.querySelector('#sortAz').addEventListener('click', () => {
+  document.getElementById('pokemonList').innerHTML = '';
+  showPokemon(sortArrayAz(arrPokemon));
 });
-// --------------------------------------------------------------------------------
+document.querySelector('#sortZa').addEventListener('click', () => {
+  document.getElementById('pokemonList').innerHTML = '';
+  showPokemon(sortArrayZa(arrPokemon));
+});
+// filtrar por km
+document.querySelector('#oneKm').addEventListener('click', () => {
+  document.getElementById('total').innerHTML = '';
+  document.getElementById('pokemonList2').innerHTML = '';
+  const totalKm = filterOneKm(arrPokemon).length;
+  document.getElementById('total').innerHTML = `N° pokemones de 1KM: ${totalKm}`;
+  showPokemon2(filterOneKm(arrPokemon));
+});
+document.querySelector('#threeKm').addEventListener('click', () => {
+  document.getElementById('total').innerHTML = '';
+  document.getElementById('pokemonList2').innerHTML = '';
+  const totalKm = filterthreeKm(arrPokemon).length;
+  document.getElementById('total').innerHTML = `N° pokemones de 3KM: ${totalKm}`;
+  showPokemon2(filterthreeKm(arrPokemon));
+});
+document.querySelector('#fiveKm').addEventListener('click', () => {
+  document.getElementById('total').innerHTML = '';
+  document.getElementById('pokemonList2').innerHTML = '';
+  const totalKm = filterFiveKm(arrPokemon).length;
+  document.getElementById('total').innerHTML = `N° pokemones de 5KM: ${totalKm}`;
+  showPokemon2(filterFiveKm(arrPokemon));
+});
+document.querySelector('#twentyKm').addEventListener('click', () => {
+  document.getElementById('total').innerHTML = '';
+  document.getElementById('pokemonList2').innerHTML = '';
+  const totalKm = filterTwentyKm(arrPokemon).length;
+  document.getElementById('total').innerHTML = `N°de pokemones de 20KM: ${totalKm}`;
+  showPokemon2(filterTwentyKm(arrPokemon));
+});
 // Datos de poder
-const dataPower = (arr, selectPower) => {
-  let power;
-  if (selectPower === 'atack') {
-    power = 'Ataque';
-  } else if (selectPower === 'defense') {
-    power = 'Defensa';
-  } else if (selectPower === 'health') {
-    power = 'Salud';
-  } else if (selectPower === 'maxCp') {
-    power = 'Max CP';
-  } else {
-    power = 'Max Hp';
-  }
+// ---------------------
+const datos = (arr) => {
   let pokList = '';
   pokList += `
-        <tr>
-          <th>N° Pokedex</th>
-          <th>Nombre</th>
-          <th>${power}</th>
-        </tr>`;
+      <tr>
+        <th>N° Pokedex</th>
+        <th>Nombre</th>
+        <th>Ataque</th>
+      </tr>`;
+  for (let i = 0; i < arr.length; i += 1) {
+    pokList += `
+      <tr>
+        <td>${arr[i].num}</td>
+        <td>${arr[i].name}</td>
+        <td>${arr[i].stats['base-attack']}</td>
+      </tr>`;
+  }
+  document.getElementById('powerTable').innerHTML = pokList;
+};
+const datos1 = (arr) => {
+  let pokList = '';
+  pokList += `
+      <tr>
+        <th>N° Pokedex</th>
+        <th>Nombre</th>
+        <th>Defensa</th>
+      </tr>`;
   for (let i = 0; i < arr.length; i += 1) {
     pokList += `
         <tr>
           <td>${arr[i].num}</td>
-          <td><img class='pokeImage' src=${arr[i].img}>${arr[i].name}</td>`;
-    if (selectPower === 'atack') {
-      pokList += `
-            <td>${arr[i].stats['base-attack']}</td>
-          </tr>`;
-    } else if (selectPower === 'defense') {
-      pokList += `
-            <td>${arr[i].stats['base-defense']}</td>
-          </tr>`;
-    } else if (selectPower === 'health') {
-      pokList += `
-            <td>${arr[i].stats['base-stamina']}</td>
-          </tr>`;
-    } else if (selectPower === 'maxCp') {
-      pokList += `
-            <td>${arr[i].stats['max-cp']}</td>
-          </tr>`;
-    } else {
-      pokList += `
-            <td>${arr[i].stats['max-hp']}</td>
-          </tr>`;
-    }
+          <td>${arr[i].name}</td>
+          <td>${arr[i].stats['base-defense']}</td>
+        </tr>`;
+  }
+  document.getElementById('powerTable').innerHTML = pokList;
+};
+const datos2 = (arr) => {
+  let pokList = '';
+  pokList += `
+      <tr>
+        <th>N° Pokedex</th>
+        <th>Nombre</th>
+        <th>Salud</th>
+      </tr>`;
+  for (let i = 0; i < arr.length; i += 1) {
+    pokList += `
+        <tr>
+          <td>${arr[i].num}</td>
+          <td>${arr[i].name}</td>
+          <td>${arr[i].stats['base-stamina']}</td>
+        </tr>`;
+  }
+  document.getElementById('powerTable').innerHTML = pokList;
+};
+const datos3 = (arr) => {
+  let pokList = '';
+  pokList += `
+      <tr>
+        <th>N° Pokedex</th>
+        <th>Nombre</th>
+        <th>Max. CP</th>
+      </tr>`;
+  for (let i = 0; i < arr.length; i += 1) {
+    pokList += `
+        <tr>
+          <td>${arr[i].num}</td>
+          <td>${arr[i].name}</td>
+          <td>${arr[i].stats['max-cp']}</td>
+        </tr>`;
+  }
+  document.getElementById('powerTable').innerHTML = pokList;
+};
+const datos4 = (arr) => {
+  let pokList = '';
+  pokList += `
+      <tr>
+        <th>N° Pokedex</th>
+        <th>Nombre</th>
+        <th>Max. HP</th>
+      </tr>`;
+  for (let i = 0; i < arr.length; i += 1) {
+    pokList += `
+        <tr>
+          <td>${arr[i].num}</td>
+          <td>${arr[i].name}</td>
+          <td>${arr[i].stats['max-hp']}</td>
+        </tr>`;
   }
   document.getElementById('powerTable').innerHTML = pokList;
 };
 document.querySelector('#showPowerData').addEventListener('click', () => {
   document.getElementById('pokedex').classList.add('ocultar');
   document.getElementById('getCandy').classList.add('ocultar');
-  document.getElementById('comparePokemon').classList.add('ocultar');
   document.getElementById('powerData').classList.remove('ocultar');
-  dataPower(sortPower(arrPokemon, 'atack'), 'atack');
-});
-// Datos de poder
-const sortPowerArray = document.querySelector('#sortPower');
-sortPowerArray.addEventListener('change', () => {
-  const powerSelect = sortPowerArray.value;
   document.getElementById('powerTable').innerHTML = '';
-  dataPower(sortPower(arrPokemon, powerSelect), powerSelect);
+  datos(sortAtack(arrPokemon));
 });
-// --------------------------------------------------------------------------------
-// Buscador
-// evento keyup se dispara cuando se suelta una tecla
-const enterName = document.getElementById('search');
-
-enterName.addEventListener('keyup', () => {
-  showPokemon(mainSearchPokemon(arrPokemon, enterName.value));
+// Botones
+document.querySelector('#atack').addEventListener('click', () => {
+  document.getElementById('powerTable').innerHTML = '';
+  datos(sortAtack(arrPokemon));
+});
+document.querySelector('#defense').addEventListener('click', () => {
+  document.getElementById('powerTable').innerHTML = '';
+  datos1(sortDefense(arrPokemon));
+});
+document.querySelector('#health').addEventListener('click', () => {
+  document.getElementById('powerTable').innerHTML = '';
+  datos2(sortHealth(arrPokemon));
+});
+document.querySelector('#maxCp').addEventListener('click', () => {
+  document.getElementById('powerTable').innerHTML = '';
+  datos3(sortMaxCp(arrPokemon));
+});
+document.querySelector('#maxHp').addEventListener('click', () => {
+  document.getElementById('powerTable').innerHTML = '';
+  datos4(sortMaxHp(arrPokemon));
 });
