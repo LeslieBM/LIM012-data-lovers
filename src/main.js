@@ -9,12 +9,12 @@ const showPokemon = (arr) => {
   let pokList = '';
   for (let i = 0; i < arr.length; i += 1) {
     pokList += `
-    <div class="conteinerPokemon">
-      <img src="${arr[i].img}">
-      <p>N°${arr[i].num}</p>
-      <p class="name">${arr[i].name}</p>
-        <p class="type">${arr[i].type}</p>
-    </div>`;
+      <div class="conteinerPokemon">
+        <img src="${arr[i].img}">
+        <p>N°${arr[i].num}</p>
+        <p class="name">${arr[i].name}</p>
+          <p class="type">${arr[i].type}</p>
+      </div>`;
   }
   document.getElementById('pokemonList').innerHTML = pokList;
 };
@@ -44,13 +44,13 @@ const showPokemon2 = (arr) => {
   let pokList2 = '';
   for (let i = 0; i < arr.length; i += 1) {
     pokList2 += `
-        <div class="conteinerPokemon">
-          <img src="${arr[i].img}">
-          <p>N°${arr[i].num}</p>
-          <p class="name">${arr[i].name}</p>
-          <p class="km">${arr[i]['buddy-distance-km']} Km</p>
-          <p class="type">${arr[i].type}</p>
-        </div>`;
+          <div class="conteinerPokemon">
+            <img src="${arr[i].img}">
+            <p>N°${arr[i].num}</p>
+            <p class="name">${arr[i].name}</p>
+            <p class="km">${arr[i]['buddy-distance-km']} Km</p>
+            <p class="type">${arr[i].type}</p>
+          </div>`;
   }
   document.getElementById('pokemonList2').innerHTML = pokList2;
 };
@@ -86,8 +86,8 @@ searchPokemon1.addEventListener('keyup', () => {
     document.getElementById('showListpokemon1').innerHTML = '';
     for (let i = 0; i < searchPokemon(arrPokemon, inputNameSelect).length; i += 1) {
       document.getElementById('showListpokemon1').innerHTML += `
-        <li class="li">${searchPokemon(arrPokemon, inputNameSelect)[i].name}</li>
-        `;
+          <li class="li">${searchPokemon(arrPokemon, inputNameSelect)[i].name}</li>
+          `;
     }
   }
   if (searchPokemon1.value === '') {
@@ -102,8 +102,8 @@ searchPokemon2.addEventListener('keyup', () => {
     document.getElementById('showListpokemon2').innerHTML = '';
     for (let i = 0; i < searchPokemon(arrPokemon, inputNameSelect).length; i += 1) {
       document.getElementById('showListpokemon2').innerHTML += `
-        <li class="li">${searchPokemon(arrPokemon, inputNameSelect)[i].name}</li>
-        `;
+          <li class="li">${searchPokemon(arrPokemon, inputNameSelect)[i].name}</li>
+          `;
     }
   }
   if (searchPokemon2.value === '') {
@@ -113,27 +113,27 @@ searchPokemon2.addEventListener('keyup', () => {
 // mostrar datos de comparacion
 const showComparePokemon = (arr) => {
   const pokemonOne = `
-    <div class="conteinerPokemonCompare">
-      <img src="${arr[0].img}">
-      <p>N°${arr[0].num}</p>
-      <p class="name">${arr[0].name}</p>
-    </div>
-    <div>
-      <p>Resistencias: ${arr[0].resistant}</p>
-      <p>Debilidades: ${arr[0].weaknesses}</p>
-    </div>`;
+      <div class="conteinerPokemonCompare">
+        <img src="${arr[0].img}">
+        <p>N°${arr[0].num}</p>
+        <p class="name">${arr[0].name}</p>
+      </div>
+      <div>
+        <p>Resistencias: ${arr[0].resistant}</p>
+        <p>Debilidades: ${arr[0].weaknesses}</p>
+      </div>`;
   document.getElementById('showPokemon1').innerHTML = pokemonOne;
 };
 const showCompareTableMove = (arr) => {
   document.getElementById('table1Pokemon1').innerHTML += `
-  <tr>
-    <th>Tipo de pokemon</th>
-    <th>Tipo de Movimiento</th>
-    <th>Movimineto</th>
-    <th>STAB</th>
-    <th>DPS</th>
-    <th>EPS</th>
-  </tr>`;
+    <tr>
+      <th>Tipo de pokemon</th>
+      <th>Tipo de Movimiento</th>
+      <th>Movimineto</th>
+      <th>STAB</th>
+      <th>DPS</th>
+      <th>EPS</th>
+    </tr>`;
   for (let i = 0; i < arr[0].type.length; i += 1) {
     for (let j = 0; j < arr[0]['quick-move'].length; j += 1) {
       let stab;
@@ -146,27 +146,27 @@ const showCompareTableMove = (arr) => {
         stab = baseDamage;
       }
       document.getElementById('table1Pokemon1').innerHTML += `
-          <tr>
-            <td>${arr[0].type[i]}</td>
-            <td>${arr[0]['quick-move'][j].type}</td>
-            <td>${arr[0]['quick-move'][j].name}</td>
-            <td>${Math.round(stab * 100) / 100}</td>
-            <td>${Math.round((baseDamage / stab) * 100) / 100}</td>
-            <td>${Math.round((energy / time) * 100) / 100}</td>
-          </tr>`;
+            <tr>
+              <td>${arr[0].type[i]}</td>
+              <td>${arr[0]['quick-move'][j].type}</td>
+              <td>${arr[0]['quick-move'][j].name}</td>
+              <td>${Math.round(stab * 100) / 100}</td>
+              <td>${Math.round((baseDamage / stab) * 100) / 100}</td>
+              <td>${Math.round((energy / time) * 100) / 100}</td>
+            </tr>`;
     }
   }
 };
 const showCompareTableAttack = (arr) => {
   document.getElementById('table2Pokemon1').innerHTML += `
-  <tr>
-    <th>Tipo de pokemon</th>
-    <th>Tipo de Movimiento</th>
-    <th>Ataque</th>
-    <th>STAB</th>
-    <th>DPS</th>
-    <th>EPS</th>
-  </tr>`;
+    <tr>
+      <th>Tipo de pokemon</th>
+      <th>Tipo de Movimiento</th>
+      <th>Ataque</th>
+      <th>STAB</th>
+      <th>DPS</th>
+      <th>EPS</th>
+    </tr>`;
   for (let i = 0; i < arr[0].type.length; i += 1) {
     for (let j = 0; j < arr[0]['special-attack'].length; j += 1) {
       let stab;
@@ -179,40 +179,40 @@ const showCompareTableAttack = (arr) => {
         stab = baseDamage;
       }
       document.getElementById('table2Pokemon1').innerHTML += `
-          <tr>
-            <td>${arr[0].type[i]}</td>
-            <td>${arr[0]['special-attack'][j].type}</td>
-            <td>${arr[0]['special-attack'][j].name}</td>
-            <td>${Math.round(stab * 100) / 100}</td>
-            <td>${Math.round((baseDamage / stab) * 100) / 100}</td>
-            <td>${Math.round((energy / time) * 100) / 100}</td>
-          </tr>`;
+            <tr>
+              <td>${arr[0].type[i]}</td>
+              <td>${arr[0]['special-attack'][j].type}</td>
+              <td>${arr[0]['special-attack'][j].name}</td>
+              <td>${Math.round(stab * 100) / 100}</td>
+              <td>${Math.round((baseDamage / stab) * 100) / 100}</td>
+              <td>${Math.round((energy / time) * 100) / 100}</td>
+            </tr>`;
     }
   }
 };
 const showComparePokemon2 = (arr) => {
   const pokemonOne = `
-    <div class="conteinerPokemonCompare">
-      <img src="${arr[0].img}">
-      <p>N°${arr[0].num}</p>
-      <p class="name">${arr[0].name}</p>
-    </div>
-    <div>
-      <p>Resistencias: ${arr[0].resistant}</p>
-      <p>Debilidades: ${arr[0].weaknesses}</p>
-    </div>`;
+      <div class="conteinerPokemonCompare">
+        <img src="${arr[0].img}">
+        <p>N°${arr[0].num}</p>
+        <p class="name">${arr[0].name}</p>
+      </div>
+      <div>
+        <p>Resistencias: ${arr[0].resistant}</p>
+        <p>Debilidades: ${arr[0].weaknesses}</p>
+      </div>`;
   document.getElementById('showPokemon2').innerHTML = pokemonOne;
 };
 const showCompareTableMove2 = (arr) => {
   document.getElementById('table1Pokemon2').innerHTML += `
-  <tr>
-    <th>Tipo de pokemon</th>
-    <th>Tipo de Movimiento</th>
-    <th>Movimineto</th>
-    <th>STAB</th>
-    <th>DPS</th>
-    <th>EPS</th>
-  </tr>`;
+    <tr>
+      <th>Tipo de pokemon</th>
+      <th>Tipo de Movimiento</th>
+      <th>Movimineto</th>
+      <th>STAB</th>
+      <th>DPS</th>
+      <th>EPS</th>
+    </tr>`;
   for (let i = 0; i < arr[0].type.length; i += 1) {
     for (let j = 0; j < arr[0]['quick-move'].length; j += 1) {
       let stab;
@@ -225,27 +225,27 @@ const showCompareTableMove2 = (arr) => {
         stab = baseDamage;
       }
       document.getElementById('table1Pokemon2').innerHTML += `
-          <tr>
-            <td>${arr[0].type[i]}</td>
-            <td>${arr[0]['quick-move'][j].type}</td>
-            <td>${arr[0]['quick-move'][j].name}</td>
-            <td>${Math.round(stab * 100) / 100}</td>
-            <td>${Math.round((baseDamage / stab) * 100) / 100}</td>
-            <td>${Math.round((energy / time) * 100) / 100}</td>
-          </tr>`;
+            <tr>
+              <td>${arr[0].type[i]}</td>
+              <td>${arr[0]['quick-move'][j].type}</td>
+              <td>${arr[0]['quick-move'][j].name}</td>
+              <td>${Math.round(stab * 100) / 100}</td>
+              <td>${Math.round((baseDamage / stab) * 100) / 100}</td>
+              <td>${Math.round((energy / time) * 100) / 100}</td>
+            </tr>`;
     }
   }
 };
 const showCompareTableAttack2 = (arr) => {
   document.getElementById('table2Pokemon2').innerHTML += `
-  <tr>
-    <th>Tipo de pokemon</th>
-    <th>Tipo de Movimiento</th>
-    <th>Ataque</th>
-    <th>STAB</th>
-    <th>DPS</th>
-    <th>EPS</th>
-  </tr>`;
+    <tr>
+      <th>Tipo de pokemon</th>
+      <th>Tipo de Movimiento</th>
+      <th>Ataque</th>
+      <th>STAB</th>
+      <th>DPS</th>
+      <th>EPS</th>
+    </tr>`;
   for (let i = 0; i < arr[0].type.length; i += 1) {
     for (let j = 0; j < arr[0]['special-attack'].length; j += 1) {
       let stab;
@@ -258,14 +258,14 @@ const showCompareTableAttack2 = (arr) => {
         stab = baseDamage;
       }
       document.getElementById('table2Pokemon2').innerHTML += `
-          <tr>
-            <td>${arr[0].type[i]}</td>
-            <td>${arr[0]['special-attack'][j].type}</td>
-            <td>${arr[0]['special-attack'][j].name}</td>
-            <td>${Math.round(stab * 100) / 100}</td>
-            <td>${Math.round((baseDamage / stab) * 100) / 100}</td>
-            <td>${Math.round((energy / time) * 100) / 100}</td>
-          </tr>`;
+            <tr>
+              <td>${arr[0].type[i]}</td>
+              <td>${arr[0]['special-attack'][j].type}</td>
+              <td>${arr[0]['special-attack'][j].name}</td>
+              <td>${Math.round(stab * 100) / 100}</td>
+              <td>${Math.round((baseDamage / stab) * 100) / 100}</td>
+              <td>${Math.round((energy / time) * 100) / 100}</td>
+            </tr>`;
     }
   }
 };
@@ -298,36 +298,36 @@ const dataPower = (arr, selectPower) => {
   }
   let pokList = '';
   pokList += `
-      <tr>
-        <th>N° Pokedex</th>
-        <th>Nombre</th>
-        <th>${power}</th>
-      </tr>`;
+        <tr>
+          <th>N° Pokedex</th>
+          <th>Nombre</th>
+          <th>${power}</th>
+        </tr>`;
   for (let i = 0; i < arr.length; i += 1) {
     pokList += `
-      <tr>
-        <td>${arr[i].num}</td>
-        <td><img class='pokeImage' src=${arr[i].img}>${arr[i].name}</td>`;
+        <tr>
+          <td>${arr[i].num}</td>
+          <td><img class='pokeImage' src=${arr[i].img}>${arr[i].name}</td>`;
     if (selectPower === 'atack') {
       pokList += `
-          <td>${arr[i].stats['base-attack']}</td>
-        </tr>`;
+            <td>${arr[i].stats['base-attack']}</td>
+          </tr>`;
     } else if (selectPower === 'defense') {
       pokList += `
-          <td>${arr[i].stats['base-defense']}</td>
-        </tr>`;
+            <td>${arr[i].stats['base-defense']}</td>
+          </tr>`;
     } else if (selectPower === 'health') {
       pokList += `
-          <td>${arr[i].stats['base-stamina']}</td>
-        </tr>`;
+            <td>${arr[i].stats['base-stamina']}</td>
+          </tr>`;
     } else if (selectPower === 'maxCp') {
       pokList += `
-          <td>${arr[i].stats['max-cp']}</td>
-        </tr>`;
+            <td>${arr[i].stats['max-cp']}</td>
+          </tr>`;
     } else {
       pokList += `
-          <td>${arr[i].stats['max-hp']}</td>
-        </tr>`;
+            <td>${arr[i].stats['max-hp']}</td>
+          </tr>`;
     }
   }
   document.getElementById('powerTable').innerHTML = pokList;
