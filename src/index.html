@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Data Lovers</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="shortcut icon" href="https://www.kindpng.com/picc/m/119-1199235_transparent-pokemon-go-logo-hd-png-download.png" type="image/x-icon">
+    <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=2">
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="https://www.kindpng.com/picc/m/119-1199235_transparent-pokemon-go-logo-hd-png-download.png" type="image/x-icon">
     <link rel="stylesheet" href="fonts.css">
   </head>
   <body>
@@ -15,22 +15,24 @@
     </header>
     <div id="container">
       <div id="browser">
-        <input type="checkbox" id="check"/>
+        <input type="checkbox" id="check">
         <label id="icon" for="check" ><img src="menu.png"></label>
-          <nav class="bar">
-            <button id="showPokedex" class="link">Pokedex</button>
-            <button id="showGetCandy" class="link">Ganar caramelos</button>
-            <button id="showComparePokemon" class="link">Comparar pokemones</button>
-            <button id="showPowerData" class="link">Datos de poder</button>
-          </nav>
+        <nav class="bar">
+          <button id="showPokedex" class="link">Pokedex</button>
+          <button id="showGetCandy" class="link">Ganar caramelos</button>
+          <button id="showComparePokemon" class="link">Comparar pokemones</button>
+          <button id="showPowerData" class="link">Datos de poder</button>
+        </nav>
       </div>
       <div id="section">
         <div id="pokedex">
-          <p class="title">Pokedex</p>
-          <p class="description">Encuentra todo lo que necesitas saber acerca de tus pokemones.</p>
+          <p class="title">POKEDEX</p>
+          <p class="description">Encuentra todo lo que necesitas saber acerca de tus pokemones.<br>
+            Selecciona un pokémon para ver sus principales características.</p>
           <section class="options">
             <select name="dropDown" id="dropDown"  class="btnGet">
-              <option value="upward" >Ordenar</option>
+              <!-- <option value="" selected disabled>Ordenar</option> -->
+              <option value="upward">Ordenar</option>
               <option value="upward">Menor a mayor N°</option>
               <option value="falling">Mayor a menor N°</option>
               <option value="sortAz">A-Z</option>
@@ -38,14 +40,15 @@
             </select>
           </section>
           <div id="pokemonList" class="pokemonList"></div>
+          <!-- <div id="ShowDescription"></div> -->
         </div>
+        <div id="showDescription"></div>
         <div id="getCandy">
-          <p class="title">Ganar Caramelos</p>
+          <p class="title">GANAR CARAMELOS</p>
           <p class="description">Elige tu compañero pokémon favorito y gana caramelos recorriendo km a su lado.<br>
             Recuerda que cada pokémon tiene un número de kilómetros definido y puedes cambiar de compañero cuando lo desees.</p>
           <section class="options">
             <select id="filterCandy"  class="btnGet">
-              <option value="oneKm">Filtrar</option>
               <option value="oneKm">Caminar 1km</option>
               <option value="threeKm">Caminar 3km</option>
               <option value="fiveKm">Caminar 5km</option>
@@ -53,12 +56,11 @@
             </select>
           </section>
           <p id="total"></p>
-          <div id="pokemonList2" class="pokemonList">
-          </div>
-        </div> 
+          <div id="pokemonList2" class="pokemonList"></div>
+        </div>
         <div id="comparePokemon">
-          <p class="title">Compara tus Pokemones</p>
-          <p class="description">Compara los datos de tus pokemones y gana tus batallas</p>
+          <p class="title">COMPARA TUS POKEMONES</p>
+          <p class="description">Compara los datos de tus pokemones y gana tus batalla</p>
           <div id="inputCompare">
             <section class="searchform">
               <input type="text" id="searchPokemon1" class="searchPokemon1" placeholder="pokemones 1 🔍" autocomplete="off">
@@ -82,9 +84,19 @@
               <table id="table2Pokemon2" class="compareTable"></table>
             </div>
           </div>
+          <div>
+            <p>LEYENDA:
+              STAB: (Same Type Attack Bonus, traducido como Bonificación por Ataque del Mismo
+              Tipo). Se calcula así: si el Pokémon que usa el movimiento es del mismo tipo que 
+              el movimiento, el daño aumenta en un 20%
+              DPS(daño por segundo): Se calcula dividiendo el daño base del movimiento por el 
+              STAB entre el tiempo que toma el movimiento.
+              EPS(energía por movimiento): Se calcula dividiendo la energía entre el tiempo que 
+              toma el movimiento.</p>
+          </div>
         </div>
         <div id="powerData">
-          <p class="title">Datos de Poder</p>
+          <p class="title">DATOS DE PODER</p>
           <p class="description">Visualiza los pokemones con mejores estadísticas de poder y prepárate para las batallas.</p>
           <section class="options">
             <select id="sortPower"  class="btnGet">
@@ -96,7 +108,7 @@
             </select>
           </section>
           <table id="powerTable"></table>
-        </div>
+        </div>  
       </div>
     </div>
     <footer >

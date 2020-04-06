@@ -1,34 +1,84 @@
 import {
-  sortArray, filterKm, sortPower, compareOnePokemon, searchPokemon, mainSearchPokemon,
+  sortArray, filterKm, sortPower, comparePokemon, searchPokemon,
 } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 const arrPokemon = data.pokemon;
+
+const showPokemonDescription = document.getElementById('showDescription');
+const pokemonList = document.getElementById('pokemonList');
 // --------------------------------------------------------------------------------
+const showDescription = (arr) => {
+  const infoPokemon = document.createElement('div');
+  infoPokemon.setAttribute('class', 'showDescriptionPokemon');
+  infoPokemon.innerHTML = `
+    <div class="containerDescription">
+      <p class="titleContainer">N° ${arr.num}  ${arr.name}</p>
+      <div class="section1">
+        <div class="sectionImage"><img class="imageContainer" src="${arr.img}"></div>
+        <div class="sectionDescription">
+          <section><p class="boldFont">Tipo: </p>${arr.type}</section>
+          <section><p class="boldFont">Descripcion:</p>${arr.about}</section>
+          <div class="section2">
+            <section class="dates1">
+              <p class="fonts">Altura: ${arr.size.height}</p>
+              <p class="fonts">Peso: ${arr.size.weight}</p>
+              <p class="fonts">Huevo: ${arr.egg}</p>
+            </section>
+            <section class="dates2">
+              <p class="fonts">Ratio de aparicion: ${arr['spawn-chance']}</p>
+              <p class="fonts">Ratio de captura Base: ${arr.encounter['base-flee-rate']}</p>
+              <p class="fonts">Ratio de huida: ${arr.encounter['base-capture-rate']}</p>
+            </section>
+          </div>
+        </div>
+      </div>
+      <button id="regresar" class="btnGet">Regresar</button>
+    </div>
+  `;
+  return infoPokemon;
+};
 const showPokemon = (arr) => {
-  let pokList = '';
+  pokemonList.innerHTML = '';
   for (let i = 0; i < arr.length; i += 1) {
-    pokList += `
-    <div class="conteinerPokemon">
-      <img src="${arr[i].img}">
-      <p>N°${arr[i].num}</p>
-      <p class="name">${arr[i].name}</p>
+    const divElement = document.createElement('div');
+    divElement.setAttribute('class', 'conteinerPokemon');
+    divElement.innerHTML = `
+      <a id="${arr[i].num}">
+        <img src="${arr[i].img}">
+        <p>N°${arr[i].num}</p>
+        <p class="name">${arr[i].name}</p>
         <p class="type">${arr[i].type}</p>
-    </div>`;
+      </a>`;
+    divElement.addEventListener('click', () => {
+      showPokemonDescription.innerHTML = '';
+      showPokemonDescription.classList.remove('ocultar');
+      document.getElementById('pokedex').classList.add('ocultar');
+      showPokemonDescription.appendChild(showDescription(arr[i]));
+      const regresar = document.getElementById('regresar');
+      regresar.addEventListener('click', () => {
+        showPokemonDescription.innerHTML = '';
+        showPokemonDescription.classList.add('ocultar');
+        document.getElementById('pokedex').classList.remove('ocultar');
+      });
+    });
+    pokemonList.appendChild(divElement);
   }
-  document.getElementById('pokemonList').innerHTML = pokList;
 };
 const loadPokedex = () => {
   showPokemon(arrPokemon);
   document.getElementById('getCandy').classList.add('ocultar');
   document.getElementById('powerData').classList.add('ocultar');
   document.getElementById('comparePokemon').classList.add('ocultar');
+  document.getElementById('ShowDescription').classList.add('ocultar');
 };
 window.addEventListener('load', loadPokedex);
-
+// boton pokedex
 document.querySelector('#showPokedex').addEventListener('click', () => {
   document.getElementById('getCandy').classList.add('ocultar');
   document.getElementById('powerData').classList.add('ocultar');
+  document.getElementById('comparePokemon').classList.add('ocultar');
+  document.getElementById('showDescription').classList.add('ocultar');
   document.getElementById('pokedex').classList.remove('ocultar');
   showPokemon(sortArray(arrPokemon, 'upward'));
 });
@@ -45,18 +95,23 @@ const showPokemon2 = (arr) => {
   for (let i = 0; i < arr.length; i += 1) {
     pokList2 += `
         <div class="conteinerPokemon">
-          <img src="${arr[i].img}">
-          <p>N°${arr[i].num}</p>
-          <p class="name">${arr[i].name}</p>
-          <p class="km">${arr[i]['buddy-distance-km']} Km</p>
-          <p class="type">${arr[i].type}</p>
+          <a id="${arr[i].num}">
+            <img src="${arr[i].img}">
+            <p>N°${arr[i].num}</p>
+            <p class="name">${arr[i].name}</p>
+            <p class="km">${arr[i]['buddy-distance-km']} Km</p>
+            <p class="type">${arr[i].type}</p>
+          </a>
         </div>`;
   }
   document.getElementById('pokemonList2').innerHTML = pokList2;
 };
+// boton ganar caramelos
 document.querySelector('#showGetCandy').addEventListener('click', () => {
   document.getElementById('pokedex').classList.add('ocultar');
   document.getElementById('powerData').classList.add('ocultar');
+  document.getElementById('comparePokemon').classList.add('ocultar');
+  document.getElementById('showDescription').classList.add('ocultar');
   document.getElementById('getCandy').classList.remove('ocultar');
   document.getElementById('total').innerHTML = '';
   showPokemon2(sortArray(arrPokemon, 'upward'));
@@ -71,11 +126,13 @@ filterArray.addEventListener('change', () => {
   document.getElementById('total').innerHTML = `N° pokemones: ${totalKm}`;
   showPokemon2(filterKm(arrPokemon, filterSelect));
 });
-
+// --------------------------------------------------------------------------------
+// boton comparar pokemones
 document.querySelector('#showComparePokemon').addEventListener('click', () => {
   document.getElementById('getCandy').classList.add('ocultar');
   document.getElementById('pokedex').classList.add('ocultar');
   document.getElementById('powerData').classList.add('ocultar');
+  document.getElementById('showDescription').classList.add('ocultar');
   document.getElementById('comparePokemon').classList.remove('ocultar');
 });
 // Sugerencia del buscador 1
@@ -113,7 +170,7 @@ searchPokemon2.addEventListener('keyup', () => {
 // mostrar datos de comparacion
 const showComparePokemon = (arr) => {
   const pokemonOne = `
-    <div class="conteinerPokemonCompare">
+    <div class="conteinerPokemon">
       <img src="${arr[0].img}">
       <p>N°${arr[0].num}</p>
       <p class="name">${arr[0].name}</p>
@@ -192,7 +249,7 @@ const showCompareTableAttack = (arr) => {
 };
 const showComparePokemon2 = (arr) => {
   const pokemonOne = `
-    <div class="conteinerPokemonCompare">
+    <div class="conteinerPokemon">
       <img src="${arr[0].img}">
       <p>N°${arr[0].num}</p>
       <p class="name">${arr[0].name}</p>
@@ -272,14 +329,18 @@ const showCompareTableAttack2 = (arr) => {
 document.querySelector('#twoPokemon').addEventListener('click', () => {
   document.getElementById('showListpokemon1').innerHTML = '';
   document.getElementById('showListpokemon2').innerHTML = '';
+  document.getElementById('table1Pokemon1').innerHTML = '';
+  document.getElementById('table2Pokemon1').innerHTML = '';
+  document.getElementById('table1Pokemon2').innerHTML = '';
+  document.getElementById('table2Pokemon2').innerHTML = '';
   const inputNameSelect1 = document.getElementById('searchPokemon1').value.toLowerCase();
   const inputNameSelect2 = document.getElementById('searchPokemon2').value.toLowerCase();
-  showComparePokemon(compareOnePokemon(arrPokemon, inputNameSelect1));
-  showCompareTableMove(compareOnePokemon(arrPokemon, inputNameSelect1));
-  showCompareTableAttack(compareOnePokemon(arrPokemon, inputNameSelect1));
-  showComparePokemon2(compareOnePokemon(arrPokemon, inputNameSelect2));
-  showCompareTableMove2(compareOnePokemon(arrPokemon, inputNameSelect2));
-  showCompareTableAttack2(compareOnePokemon(arrPokemon, inputNameSelect2));
+  showComparePokemon(comparePokemon(arrPokemon, inputNameSelect1));
+  showCompareTableMove(comparePokemon(arrPokemon, inputNameSelect1));
+  showCompareTableAttack(comparePokemon(arrPokemon, inputNameSelect1));
+  showComparePokemon2(comparePokemon(arrPokemon, inputNameSelect2));
+  showCompareTableMove2(comparePokemon(arrPokemon, inputNameSelect2));
+  showCompareTableAttack2(comparePokemon(arrPokemon, inputNameSelect2));
 });
 // --------------------------------------------------------------------------------
 // Datos de poder
@@ -332,14 +393,16 @@ const dataPower = (arr, selectPower) => {
   }
   document.getElementById('powerTable').innerHTML = pokList;
 };
+// Boton datos de poder en Navegador
 document.querySelector('#showPowerData').addEventListener('click', () => {
   document.getElementById('pokedex').classList.add('ocultar');
   document.getElementById('getCandy').classList.add('ocultar');
   document.getElementById('comparePokemon').classList.add('ocultar');
+  document.getElementById('showDescription').classList.add('ocultar');
   document.getElementById('powerData').classList.remove('ocultar');
   dataPower(sortPower(arrPokemon, 'atack'), 'atack');
 });
-// Datos de poder
+// Desplegable de datos de poder
 const sortPowerArray = document.querySelector('#sortPower');
 sortPowerArray.addEventListener('change', () => {
   const powerSelect = sortPowerArray.value;
@@ -349,8 +412,22 @@ sortPowerArray.addEventListener('change', () => {
 // --------------------------------------------------------------------------------
 // Buscador
 // evento keyup se dispara cuando se suelta una tecla
-const enterName = document.getElementById('search');
-
-enterName.addEventListener('keyup', () => {
-  showPokemon(mainSearchPokemon(arrPokemon, enterName.value));
+const search = document.getElementById('search');
+search.addEventListener('keyup', () => {
+  const inputText = search.value.toLowerCase();
+  showPokemon(searchPokemon(arrPokemon, inputText));
+  if (document.getElementById('pokemonList') === '') {
+    pokemonList.innerHTML = '<h1>Pokemon no encontrado<h1>';
+  }
+  if (search.value !== '') {
+    document.getElementById('showListpokemon').innerHTML = '';
+    for (let i = 0; i < searchPokemon(arrPokemon, inputText).length; i += 1) {
+      document.getElementById('showListpokemon').innerHTML += `
+        <li class="li">${searchPokemon(arrPokemon, inputText)[i].name}</li>
+        `;
+    }
+  }
+  if (search.value === '') {
+    document.getElementById('showListpokemon').innerHTML = '';
+  }
 });

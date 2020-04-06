@@ -34,11 +34,11 @@ export const filterKm = (arr, condition) => {
     arrFilterKM = arr.filter(object => object['buddy-distance-km'] === '3');
   } else if (condition === 'fiveKm') {
     arrFilterKM = arr.filter(object => object['buddy-distance-km'] === '5');
-  } else if (condition === 'twentyKm') {
+  } else {
     arrFilterKM = arr.filter(object => object['buddy-distance-km'] === '20');
   }
   return arrFilterKM;
-};
+};// if (condition === 'twentyKm')
 export const sortPower = (arr, condition) => {
   let arrPokemonPower = [];
   if (condition === 'atack') {
@@ -54,20 +54,12 @@ export const sortPower = (arr, condition) => {
   }
   return arrPokemonPower;
 };
-export const compareOnePokemon = (arr, condition) => {
-  const arrFilterName = arr.filter(object => object.name === condition);
-  return arrFilterName;
-};
-export const compareTwoPokemon = (arr, condition) => {
+export const comparePokemon = (arr, condition) => {
   const arrFilterName = arr.filter(object => object.name === condition);
   return arrFilterName;
 };
 // buscador
 export const searchPokemon = (arr, condition) => {
   const pokemon = arr.filter(object => (object.name).indexOf(condition) === 0);
-  return pokemon;
-};
-export const mainSearchPokemon = (arr, input) => {
-  const pokemon = arr.filter(obj => obj.name.startsWith(input.toLowerCase()));
   return pokemon;
 };
