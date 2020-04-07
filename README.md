@@ -371,9 +371,11 @@ en base al conocimiento que puedas obtener de tu usuario. Estas preguntas te
 pueden ayudar:
 
 * ¿Quiénes son los principales usuarios de producto?
+Los principales usuarios de producto son personas que están ingresando a conocer el mundo de Pokemon Go
 * ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
 * ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?
 * ¿Cuándo utilizan o utilizarían el producto?
+
 * Toda tu investigación previa debe tener como resultado todas las Historias
   de Usuario de tu proyecto.
 * No hagas los prototipos de alta fidelidad de todas tus Historias. Comienza
