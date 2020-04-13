@@ -88,20 +88,20 @@ Criterios de Aceptación:
 
 #### Prototipo de baja fidelidad
 
-![alt Prototipo Pokedex](prototipos/PBF_pokedex)
-![alt Prototipo Caracteristicas](prototipos/PBF_caracteristicas)
-![alt Prototipo Ganar Caramelos](prototipos/PBF_ganar_caramelos)
-![alt Prototipo Datos de Poder](prototipos/PBF_datos_de_poder)
-![alt Prototipo Comparar Pokemones](prototipos/PBF_comparar_pokemones)
+![alt Prototipo Pokedex](prototipos/PBF_pokedex.jpg)
+![alt Prototipo Caracteristicas](prototipos/PBF_caracteristicas.jpg)
+![alt Prototipo Ganar Caramelos](prototipos/PBF_ganar_caramelos.jpg)
+![alt Prototipo Datos de Poder](prototipos/PBF_datos_de_poder.jpg)
+![alt Prototipo Comparar Pokemones](prototipos/PBF_comparar_pokemones.jpg)
 
 #### Prototipo de alta fidelidad
 
-![alt Prototipo AF Pokedex](prototipos/PAF_pokedex)
-![alt Prototipo AF Pokedex Responsive](prototipos/PAF_pokedex_reponsive)
-![alt Prototipo AF Caracteristicas](prototipos/PAF_caracteristicas)
-![alt Prototipo AF Caramelos](prototipos/PAF_ganar_caramelos)
-![alt Prototipo AF Datos de Poder](prototipos/PAF_datos_de_poder)
-![alt Prototipo AF Comparar Pokemones](prototipos/PAF_comparar_pokemones)
+![alt Prototipo AF Pokedex](prototipos/PAF_pokedex.png)
+![alt Prototipo AF Pokedex Responsive](prototipos/PAF_pokedex_reponsive.png)
+![alt Prototipo AF Caracteristicas](prototipos/PAF_caracteristicas.png)
+![alt Prototipo AF Caramelos](prototipos/PAF_ganar_caramelos.png)
+![alt Prototipo AF Datos de Poder](prototipos/PAF_datos_de_poder.png)
+![alt Prototipo AF Comparar Pokemones](prototipos/PAF_comparar_pokemones.png)
 
 ## 1. Preámbulo
 
