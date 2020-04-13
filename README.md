@@ -2,6 +2,7 @@
 
 ## Índice
 
+* [Presentación de Proyecto Pokemon Go](#0-presentación-proyecto)
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
 * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
@@ -13,6 +14,94 @@
 * [9. Checklist](#9-checklist)
 
 ***
+## Presentación de Proyecto Pokemon Go
+
+### Definición del producto
+
+Este proyecto es un sitio web dirigido a usuarios que están iniciando en el mundo virtual del juego Pokemon Go, es una página web que brinda a los usuarios la posibilidad de realizar diferentes interacciones de forma sencilla y rápida para poder conocer las principales caraterísticas y datos de los pokemones mediante acciones como búsquedas, filtros, ordenado y cálculos basados en una importante data sobre cada uno de los pokemones; en base esta información los usuarios podrán conocer mejor, hacer capturas y escoger a los pokemones para sus batallas.
+
+### Historias de usuario
+
+## Historia de usuario N°1: 
+Descripción: Yo como jugador de Pokemon Go quiero visualizar a todos los pokemones para poder conocerlos.
+Criterios de Aceptación:
+- El usuario al acceder a la pagina podrá visualizar a todos los pokemones
+- El usuario podrá ver su foto, su nombre y el tipo del pokemón.
+- La página estará publicada y se podrá visualizar en cualquier dispositivo.
+
+## Historia de usuario N°2: 
+Descripción: Yo como usuario quiero ordenar por orden nombre(A-Z / Z-A) a mis pokemones para poder ubicarlos.
+Criterios de Aceptación:
+- El usuario al hacer click en el botón de ordenar se desplegará una serie de opciones(filtrar de A-Z, Z-A, ascendente, descendente)
+- El usuario al elegir una opción podrá ver que se ordena según sea lo que haya elegido en caso sea A-Z o Z-A podrá ver que se ordena por el nombre o si ha elegido que se orden ascendente o descendente se ordenará por el id
+- La página estará publicada y se podrá visualizar en cualquier dispositivo (desktop,tablet y celular).
+
+## Historia de usuario N°3: 
+Descripción: Yo como usuario quiero ordenar por su numero a mis pokemones para poder ubicarlos de manera mas rápida.
+Criterios de Aceptación: 
+- El usuario al hacer click en el botón de ordenar se desplegará una serie de opciones(filtrar de manera ascendente y descendente)
+- El usuario al elegir una opción podrá ver que se ordena según sea lo que haya elegido, que se orden ascendente o descendente se ordenará por el id.
+- La página estará publicada y se podrá visualizar en cualquier dispositivo (desktop,tablet y celular).
+
+## Historia de usuario N°4: 
+Descripción: Yo como usuario quiero conocer la distancia que debo caminar con un pokemón para obtener caramelos.
+Criterios de Aceptación:
+- El usuario podrá hacer click en el botón de ganar caramelos que le mostrará una lista de opciones según lo que debe caminar con el acompañante para ganar los caramelos(1k, 3k, 5k, 10k)
+- El usuario al hacer click en una opción solo le mostrará los nombres, id, imagen y tipo de los pokemones que pertenecen a esa distancia
+- La información será adaptable a cualquier dispositivo(desktop,tablet y celular).
+
+## Historia de usuario N°5,6,7,8,9: 
+Descripción: Yo como usuario quiero ordenar de mayor a menor los datos de poder (ataque, defensa, salud, max Hp y max CP) de los pokemones para poder ver cual es mi mejor opción para mis batallas.
+Criterios de Aceptación:
+- El usuario al hacer click en la opción "Datos de poder" de la lista de filtros podrá visualizar una pantalla con 5 botones entre ellos debe hacer click en "atake" para poder ordemar de mayor a menor atake a los pokemones
+- El usuario al hacer click en el boton podrá visualizar los pokemones.
+- La información debe ser (responsive) adaptable a cualquier dispositivo (desktop,tablet y celular).
+
+## Historia de usuario N°10: 
+Descripción: Yo como usuario quiero buscar a mi pokemón por su nombre para poder ubicarlo dentro del total de pokemones.
+Criterios de Aceptación:
+- El usuario podrá visualizar en la parte superior un input "buscar pokemon"
+- El usuario al hacer click sobre la caja de búsqueda podrá ingresar algunas letras y obtendrá sugerencias sobre el pokemón que está buscando.
+- El usuario al seleccionar un nombre podrá ubicar al pokemon que está buscando.
+- La página estará publicada y se podrá visualizar en cualquier dispositivo(desktop,tablet y celular).
+
+## Historia de usuario N°11: 
+Descripción: Yo como usuario quiero seleccionar a un pokemón para poder conocer sus características.
+Criterios de Aceptación:
+- El usuario al hacer click sobre la imagen del pokemon podrá visualizar  en una nueva pantalla las características básicas del pokemon(imagen, nombre, id, tipo, altura, peso, caramelos y los kilómetros que debes caminar con el huevo).
+- La información será adaptable a cualquier tipo de dispositivo.
+
+## Historia de usuario N°12: 
+Descripción: Yo como usuario quiero comparar los datos de combate(Debilidades, resistencias, STAB, DPS, EPS)entre dos pokemones para poder elegir el mas apropiado para cada batalla.
+Criterios de Aceptación:
+- El usuario al hacer click en la opción de "Combate" podrá comparar entre dos pokemones, para ello deberá realizar dos filtros: Seleccionar el tipo de pokemon y luego seleccionar el nombre del pokemon.
+- Al hacer click en el botón comparar podrá visualizar los siguientes datos: Imágen del pokemón, id, nombre, debilidades,resistencias.
+- El usuario al hacer click  en el botón "Ver ataques y movimientos" podrá visualizar información detallada sobre los siguientes datos: STAB,DPS,EPS.
+- La página estará publicada y se podrá visualizar en cualquier dispositivo.
+
+## Definición de terminado de las historias de Usuario:
+- El código cumple con la guía de estilos acordada en el prototipo.
+- La historia implementada ha sido testeada con al menos 3 usuarios y se han incorporado las mejoras identificadas.
+- El código ha pasado los tests necesarios.
+- El diseño ha sido realizado con la técnica de diseño web responsive para una correcta visualización en cualquier dispositivo.
+- El código esta desplegado en gh-pages
+
+#### Prototipo de baja fidelidad
+
+![alt Prototipo Pokedex](prototipos/PBF_pokedex.jpg)
+![alt Prototipo Caracteristicas](prototipos/PBF_caracteristicas.jpg)
+![alt Prototipo Ganar Caramelos](prototipos/PBF_ganar_caramelos.jpg)
+![alt Prototipo Datos de Poder](prototipos/PBF_datos_de_poder.jpg)
+![alt Prototipo Comparar Pokemones](prototipos/PBF_comparar_pokemones.jpg)
+
+#### Prototipo de alta fidelidad
+
+![alt Prototipo AF Pokedex](prototipos/PAF_pokedex.png)
+![alt Prototipo AF Pokedex Responsive](prototipos/PAF_pokedex_responsive.png)
+![alt Prototipo AF Caracteristicas](prototipos/PAF_caracteristicas.png)
+![alt Prototipo AF Caramelos](prototipos/PAF_ganar_caramelos.png)
+![alt Prototipo AF Datos de Poder](prototipos/PAF_datos_de_poder.png)
+![alt Prototipo AF Comparar Pokemones](prototipos/PAF_comparar_pokemones.png)
 
 ## 1. Preámbulo
 
@@ -91,47 +180,47 @@ y de equipo.
 
 ### UX
 
-- [ ] Diseñar la aplicación pensando y entendiendo al usuario.
-- [ ] Crear prototipos para obtener _feedback_ e iterar.
-- [ ] Aplicar los principios de diseño visual (contraste, alineación, jerarquía).
-- [ ] Planear y ejecutar _tests_ de usabilidad.
+- [X] Diseñar la aplicación pensando y entendiendo al usuario.
+- [X] Crear prototipos para obtener _feedback_ e iterar.
+- [X] Aplicar los principios de diseño visual (contraste, alineación, jerarquía).
+- [X] Planear y ejecutar _tests_ de usabilidad.
 
 ### HTML y CSS
 
-- [ ] Entender y reconocer por qué es importante el HTML semántico.
-- [ ] Identificar y entender tipos de selectores en CSS.
-- [ ] Entender como funciona `flexbox` en CSS.
-- [ ] Construir tu aplicación respetando el diseño planeado (maquetación).
+- [X] Entender y reconocer por qué es importante el HTML semántico.
+- [X] Identificar y entender tipos de selectores en CSS.
+- [X] Entender como funciona `flexbox` en CSS.
+- [X] Construir tu aplicación respetando el diseño planeado (maquetación).
 
 ### DOM
 
-- [ ] Entender y reconocer los selectores del DOM (`querySelector` | `querySelectorAll`).
-- [ ] Manejar eventos del DOM. (`addEventListener`)
-- [ ] Manipular dinámicamente el DOM. (`createElement`, `appendchild`, `innerHTML`, `value`)
+- [X] Entender y reconocer los selectores del DOM (`querySelector` | `querySelectorAll`).
+- [X] Manejar eventos del DOM. (`addEventListener`)
+- [X] Manipular dinámicamente el DOM. (`createElement`, `appendchild`, `innerHTML`, `value`)
 
 ### Javascript
 
-- [ ] Manipular arrays (`filter` | `map` | `sort` | `reduce`).
-- [ ] Manipular objects (key | value).
-- [ ] Entender el uso de condicionales (`if-else` | `switch`).
-- [ ] Entender el uso de bucles (`for` | `forEach`).
-- [ ] Entender la diferencia entre expression y statements.
-- [ ] Utilizar funciones (`parámetros` | `argumentos` | `valor de retorno`).
-- [ ] Entender la diferencia entre tipos de datos atómicos y estructurados.
-- [ ] Utilizar ES Modules (`import` | `export`).
+- [X] Manipular arrays (`filter` | `map` | `sort` | `reduce`).
+- [X] Manipular objects (key | value).
+- [X] Entender el uso de condicionales (`if-else` | `switch`).
+- [X] Entender el uso de bucles (`for` | `forEach`).
+- [X] Entender la diferencia entre expression y statements.
+- [X] Utilizar funciones (`parámetros` | `argumentos` | `valor de retorno`).
+- [X] Entender la diferencia entre tipos de datos atómicos y estructurados.
+- [X] Utilizar ES Modules (`import` | `export`).
 
 ### Pruebas Unitarias (_testing_)
-- [ ] Testear funciones (funciones puras).
+- [X] Testear funciones (funciones puras).
 
 ### Git y GitHub
-- [ ] Ejecutar comandos de git (`add` | `commit` | `pull` | `status` | `push`).
-- [ ] Utilizar los repositorios de GitHub (`clone` | `fork` | `gh-pages`).
-- [ ] Colaborar en Github (`pull requests`).
+- [X] Ejecutar comandos de git (`add` | `commit` | `pull` | `status` | `push`).
+- [X] Utilizar los repositorios de GitHub (`clone` | `fork` | `gh-pages`).
+- [X] Colaborar en Github (`pull requests`).
 
 ### Buenas prácticas de desarrollo
-- [ ] Organizar y dividir el código en módulos (Modularización).
-- [ ] Utilizar identificadores descriptivos (Nomenclatura | Semántica).
-- [ ] Utilizar linter para seguir buenas prácticas (ESLINT).
+- [X] Organizar y dividir el código en módulos (Modularización).
+- [X] Utilizar identificadores descriptivos (Nomenclatura | Semántica).
+- [X] Utilizar linter para seguir buenas prácticas (ESLINT).
 
 ## 4. Consideraciones generales
 
@@ -374,6 +463,7 @@ pueden ayudar:
 * ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
 * ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?
 * ¿Cuándo utilizan o utilizarían el producto?
+
 * Toda tu investigación previa debe tener como resultado todas las Historias
   de Usuario de tu proyecto.
 * No hagas los prototipos de alta fidelidad de todas tus Historias. Comienza
