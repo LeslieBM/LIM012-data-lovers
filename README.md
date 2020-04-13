@@ -97,7 +97,7 @@ Criterios de Aceptación:
 #### Prototipo de alta fidelidad
 
 ![alt Prototipo AF Pokedex](prototipos/PAF_pokedex.png)
-![alt Prototipo AF Pokedex Responsive](prototipos/PAF_pokedex_reponsive.png)
+![alt Prototipo AF Pokedex Responsive](prototipos/PAF_pokedex_responsive.png)
 ![alt Prototipo AF Caracteristicas](prototipos/PAF_caracteristicas.png)
 ![alt Prototipo AF Caramelos](prototipos/PAF_ganar_caramelos.png)
 ![alt Prototipo AF Datos de Poder](prototipos/PAF_datos_de_poder.png)
