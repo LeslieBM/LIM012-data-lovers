@@ -3,12 +3,8 @@
  }
 body{
     background: #F6F8FF;
-    width: 100%;
-    height: 100%;
-    margin-top: 0%;
-    margin-left:0%;
+    margin: 0;
     color: #413d3d;
-    font-size: 1em;
     font-family: 'Lato', sans-serif;
  }
 /*Header*/
@@ -19,9 +15,7 @@ header{
     border-right:0;
     border-left:0;
     background: #205FA7;
-    display: inline-flex;
-    flex: wrap;
-    flex-direction: row;
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
@@ -39,9 +33,8 @@ header{
     text-align: center;
 }
 /*Barra Lateral de Navegación*/
-#browser{
-    width: 100%;
-    height: 100%;
+#container{
+    position: sticky;
 }
 #check{
     display: none;
@@ -50,7 +43,7 @@ header{
     display: none;
 }
 .bar{
-    background-color: #FFCB05;
+    background-color: #FFCD1F;
     height: 100%;
     width: 15%;
     position: absolute;
@@ -60,7 +53,7 @@ header{
     width: 100%;
     text-align: justify;
     outline:none;
-    background-color: #FFCB05;
+    background-color: #FFCD1F;
     padding: 1em;
     font-size: 1.2em;
     transition: all .2s linear;
@@ -79,8 +72,6 @@ header{
     padding-left: 15%;
 }
 #pokedex,#getCandy,#comparePokemon,#powerData{
-    width: 100%;
-    height: 100%;
     text-align: center;
 }
 .title{
@@ -112,7 +103,7 @@ header{
     border: 0.1em solid #A1A1AE;
     padding: 0.5em;
     font-size: 1em;
-    color: #413D3D;
+    color: #205FA7;
     outline:none;
     border-radius: 0.5em;
 }
@@ -136,83 +127,194 @@ header{
     font-size: 1.2em;
 }
 .type{
-    padding: 0.8em;
-    background-color: #205FA7;
+    padding: 0.5em;
     color: white;
     text-transform: capitalize;
     letter-spacing: 0.2em;
 }
+/*Caracteristicas de Pokemones*/
+.containerDescription{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;    
+}
+.titleContainer{
+    margin-left: 2.5rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+.sectionImage{
+    margin-left: 2.5rem;
+}
+.imageContainer{
+    width: 90%;
+    padding: 0.2rem;
+    border: #A1A1AE 0.1em solid;
+    border-radius: 0.5rem;
+    margin: 0;
+}
+.boldFont{
+    font-size: 1.5em;
+    color: #205FA7;
+    font-weight: bold;
+}
+.datesPokemon{
+    width: 22rem;
+}
+.pokemonType{
+    color: white;
+}
+.datesPokemon2{
+    width: 70%;
+    font-size: 0.5rem;
+    margin-top: 4.5rem;
+}
+.dates{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: #A1A1AE 0.2em solid;
+    border-radius: 1rem;
+    width: 60%;
+}
+.dates1, .dates2{
+    line-height: 1em;
+}
+.contentArrowImage{
+    width: 20%;
+    height: 20%;
+}
+.arrowImage{
+    width: 50%;
+    height: 50%;
+}
+.pokemonDescription{
+    width: 90%;
+}
+.evolutionPokemon{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20%;
+    margin-top: 1rem;
+    border: #A1A1AE 0.1em solid;
+    border-radius: 1rem; 
+}
+.btnRegresar{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /*Comparación de Pokemones*/
 #inputCompare{
-    height: 100%;
-    padding-left: 15%;
-    display: inline-flex;
-    justify-content: space-between;
+    display: flex;
+    justify-content: space-around;
+}
+#searchForm1{
+    margin-left: 17%;
+}
+#searchForm2{
+    margin-right: 17%;
+}
+#twoPokemon{
+    height: 2rem;
+    width: 10rem;
+    margin-top: 5%
 }
 #tableComparePokemon{
     display: inline-flex;
-    align-content: space-between;
-}
-.conteinerPokemonCompare {
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1em;
-    padding: 2em;
-    border: #A1A1AE 0.2em solid;
-    color: #205FA7;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 2em;
 }
 #showPokemon1, #showPokemon2{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-/* Tabla de Datos de Poder*/
-.compareTable{
+#searchPokemon1, #searchPokemon2{
+    border: 0.1em solid #A1A1AE;
+    padding: 0.5em;
     font-size: 1em;
-    font-weight: bold;
-    margin: 2%;
-    margin-bottom: 2%;
+    color: #205FA7;
+    border-radius: 0.5em;
+}
+.sectionPokemon{
+    display:flex;
+    flex-direction: column;
+    
+}
+.compareTable{
+    margin: 1em;
     border-collapse: collapse;
+    border: #A1A1AE 0.2em solid;
+    align-items: center;
+    font-size: 0.8em;
+}
+.leyenda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.pleyenda{
+    width: 80%;
+    padding: 1em;
+    text-align: justify;
+    border: 0.1em solid #A1A1AE;
+    border-radius: 1em;
+    line-height: 1.5em;
+}
+.pokemon{
+    width: 150px;
+}
+/* Tabla de Datos de Poder*/
+.items{
+    display: flex;
+    justify-content: center;
+}
+.imageAsh{
+    height: 300px;
+    width: 150px;
+    margin: 3rem;
+}
+.pikachu{
+    height: 300px;
+    width: 150px;
+    margin: 3rem;
 }
 #powerTable{
-    font-size: 1em;
     width: 50%;
-    height: 80%;
-    font-weight: bold;
-    margin: auto;
     margin-top: 2%;
-    margin-bottom: 2%;
     border-collapse: collapse;
-    position: center;
+    border: #A1A1AE 0.2em solid;
 }
 table tr{
-    padding: 5px;
+    padding: 3px;
+    border-top: groove;
+    text-align: center;
 }
-
 table th, table td {
-    border: 1px solid #205FA7;
-    padding: 10px;
+    padding: 8px;
     text-align: center;
 }
 table th {
-    text-transform: uppercase;
-    background-color: #205FA7;
-    color: white;
+    text-transform: capitalize;
+    border-style: groove;
+    font-weight: bold;
+    background-color: #A1A1AE  ;
+    border: #A1A1AE 0.2em solid;
 }
 table td {
     text-transform: capitalize;
     text-align: center;
-}
+}   
 .pokeImage{
     height: 4em;
     width: 4em;
 }
-
 /* Responsive para celular */
 @media screen and (min-width:300px) and (max-width:600px)  {
     #icon{
@@ -264,6 +366,51 @@ table td {
         padding: 2%;   
         font-size: 0.8em;
     }
+    .containerDescription{
+        width: 100%;
+        display: block;    
+    }
+    .descriptionPokemon{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .datesPokemon2{
+        width: auto;
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .dates{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: #A1A1AE 0.2em solid;
+        border-radius: 1rem;
+        width: 60%;
+    }
+    .evolutionPokemon{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: #A1A1AE 0.1em solid;
+        border-radius: 1rem; 
+    }
+    #tableComparePokemon{
+        display: flex;
+        flex-direction: column;
+    }
+    #searchForm1,#searchForm2{
+        margin:0;
+    }
+    #twoPokemon{
+        margin:0.5em;
+    }
+    #inputCompare{
+        display: block;
+    }
 
 }
 /*Responsive para tablet*/
@@ -304,6 +451,17 @@ table td {
         padding: 2%;   
         font-size: 0.8em;
     }
+    
+    #tableComparePokemon{
+        display: flex;
+        flex-direction: column;
+    }
+    #searchForm1,#searchForm2{
+        padding-left: 0;
+    }
+    #inputCompare{
+        display: block;
+    }
 }
 /*Footer*/
 footer{
@@ -314,9 +472,9 @@ footer{
     color: #F6F8FF;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-content: center;
     justify-content: center;
+    border: 0.2em solid #413D3D;
 }
 .social{
     padding-top: 0.8em;
@@ -344,3 +502,21 @@ footer{
 .icon:hover{
     padding: 0.8rem;
 }
+.typenormal { padding: 4px; background-color : #a8a878 }
+.typefire { padding: 4px; background-color : #f08030 }
+.typewater { padding: 4px; background-color : #6890f0 }
+.typegrass { padding: 4px; background-color : #78c850 }
+.typepoison { padding: 4px; background-color : #a040a0 }
+.typeelectric { padding: 4px; background-color : #f8d030 }
+.typeground { padding: 4px; background-color : #e0c068 }
+.typepsychic { padding: 4px; background-color : #f85888 }
+.typerock { padding: 4px; background-color : #b8a038 }
+.typeice { padding: 4px; background-color : #98d8d8 }
+.typebug { padding: 4px; background-color : #a8b820 }
+.typedragon { padding: 4px; background-color : #7038f8 }
+.typeghost { padding: 4px; background-color : #705898 }
+.typesteel { padding: 4px; background-color : #b8b8d0 }
+.typefairy { padding: 4px; background-color : #ee99ac }
+.typedark { padding: 4px; background-color : #705848 }
+.typeflying { padding: 4px; background-color : #a890f0 }
+.typefighting { padding: 4px; background-color : #c02038 }

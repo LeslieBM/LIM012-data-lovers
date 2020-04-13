@@ -34,8 +34,10 @@ export const filterKm = (arr, condition) => {
     arrFilterKM = arr.filter(object => object['buddy-distance-km'] === '3');
   } else if (condition === 'fiveKm') {
     arrFilterKM = arr.filter(object => object['buddy-distance-km'] === '5');
-  } else {
+  } else if (condition === 'twentyKm') {
     arrFilterKM = arr.filter(object => object['buddy-distance-km'] === '20');
+  } else {
+    arrFilterKM = arr.sort((a, b) => a.num - b.num);
   }
   return arrFilterKM;
 };// if (condition === 'twentyKm')

@@ -11,7 +11,7 @@
   <body>
     <header>
       <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Pok%C3%A9mon_GO_logo.svg/1200px-Pok%C3%A9mon_GO_logo.svg.png">
-      <input type="text" id="search" class="search" placeholder="Buscar pokemones 🔍" autocomplete="off">
+      <input type="text" id="search" class="search" placeholder="Buscar pokemon🔍" autocomplete="off">
     </header>
     <div id="container">
       <div id="browser">
@@ -31,7 +31,6 @@
             Selecciona un pokémon para ver sus principales características.</p>
           <section class="options">
             <select name="dropDown" id="dropDown"  class="btnGet">
-              <!-- <option value="" selected disabled>Ordenar</option> -->
               <option value="upward">Ordenar</option>
               <option value="upward">Menor a mayor N°</option>
               <option value="falling">Mayor a menor N°</option>
@@ -40,7 +39,6 @@
             </select>
           </section>
           <div id="pokemonList" class="pokemonList"></div>
-          <!-- <div id="ShowDescription"></div> -->
         </div>
         <div id="showDescription"></div>
         <div id="getCandy">
@@ -49,6 +47,7 @@
             Recuerda que cada pokémon tiene un número de kilómetros definido y puedes cambiar de compañero cuando lo desees.</p>
           <section class="options">
             <select id="filterCandy"  class="btnGet">
+              <option value="filterbyKM">Filtrar por km</option>
               <option value="oneKm">Caminar 1km</option>
               <option value="threeKm">Caminar 3km</option>
               <option value="fiveKm">Caminar 5km</option>
@@ -60,37 +59,38 @@
         </div>
         <div id="comparePokemon">
           <p class="title">COMPARA TUS POKEMONES</p>
-          <p class="description">Compara los datos de tus pokemones y gana tus batalla</p>
+          <p class="description">Compara los datos de tus pokemones y gana tus batallas</p>
           <div id="inputCompare">
-            <section class="searchform">
-              <input type="text" id="searchPokemon1" class="searchPokemon1" placeholder="pokemones 1 🔍" autocomplete="off">
+            <div id="searchForm1">
+              <input type="text" id="searchPokemon1" class="searchPokemon1" placeholder="pokemon 1 🔍" autocomplete="off">
               <div id="showListpokemon1"></div>
-            </section>
-            <section class="searchform">
-              <input type="text" id="searchPokemon2" class="searchPokemon2" placeholder="pokemones 2 🔍" autocomplete="off">
+            </div>
+            <button id="twoPokemon" class="btnGet">Comparar</button>
+            <div id="searchForm2">
+              <input type="text" id="searchPokemon2" class="searchPokemon2" placeholder="pokemon 2 🔍" autocomplete="off">
               <div id="showListpokemon2"></div>
-            </section>
+            </div>
           </div>
-          <button id="twoPokemon">Comparar pokemones</button>
           <div id="tableComparePokemon">
-            <div>
+            <div class="sectionPokemon">
               <section id="showPokemon1"></section>
               <table id="table1Pokemon1" class="compareTable"></table>
               <table id="table2Pokemon1" class="compareTable"></table>
             </div>
-            <div>
+            <div class="sectionPokemon">
               <section id="showPokemon2"></section>
               <table id="table1Pokemon2" class="compareTable"></table>
               <table id="table2Pokemon2" class="compareTable"></table>
             </div>
           </div>
-          <div>
-            <p>LEYENDA:
-              STAB: (Same Type Attack Bonus, traducido como Bonificación por Ataque del Mismo
-              Tipo). Se calcula así: si el Pokémon que usa el movimiento es del mismo tipo que 
-              el movimiento, el daño aumenta en un 20%
+          <div class="leyenda">
+            <img class="pokemon" src="pokemon.png">
+            <p class="pleyenda">LEYENDA<br>
+              STAB (bonificación por ataque del mismo
+              tipo): Si el Pokémon que usa el movimiento es del mismo tipo que 
+              el movimiento, el daño aumenta en un 20%.<br>
               DPS(daño por segundo): Se calcula dividiendo el daño base del movimiento por el 
-              STAB entre el tiempo que toma el movimiento.
+              STAB entre el tiempo que toma el movimiento.<br>
               EPS(energía por movimiento): Se calcula dividiendo la energía entre el tiempo que 
               toma el movimiento.</p>
           </div>
@@ -107,7 +107,11 @@
               <option value="maxHp">Máx. HP</option>
             </select>
           </section>
-          <table id="powerTable"></table>
+          <div class="items">
+            <img class="pikachu" src="pikachu.png">
+            <table id="powerTable"></table>
+            <img class="imageAsh" src="ash.png">
+            </div>
         </div>  
       </div>
     </div>
